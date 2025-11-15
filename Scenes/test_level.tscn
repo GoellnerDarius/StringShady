@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=5 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="Texture2D" uid="uid://b2aj2u6w2pseo" path="res://Assets/ProtoypeFolder/111675360QM9_OF_F-4163753176.jpg" id="2_dtjkg"]
+[ext_resource type="PackedScene" uid="uid://b17a67ecsyjpt" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
+[ext_resource type="Texture2D" uid="uid://yfib1p1sadqd" path="res://Assets/ProtoypeFolder/man-avatar-clipart-illustration-free-png-2353026389.png" id="3_rsyfn"]
 
-[node name="TestLevel" type="Node2D"]
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints")]
 script = ExtResource("1_iti4p")
 stringSprite = Array[Texture2D]([ExtResource("2_dtjkg")])
+humanSprite = Array[Texture2D]([ExtResource("3_rsyfn"), ExtResource("3_rsyfn"), ExtResource("3_rsyfn"), ExtResource("3_rsyfn")])
+HumanSpawnPoints = [NodePath("Human"), NodePath("Human2")]
 
 [node name="Button" type="Button" parent="."]
 offset_left = 371.0
@@ -25,3 +29,42 @@ position = Vector2(99, 76)
 
 [node name="String1" type="Sprite2D" parent="Node2D/Basket"]
 position = Vector2(99, 76)
+
+[node name="Human" parent="." instance=ExtResource("3_eglq2")]
+offset_left = 405.0
+offset_top = 31.0
+offset_right = 445.0
+offset_bottom = 71.0
+
+[node name="Human2" parent="." instance=ExtResource("3_eglq2")]
+offset_left = 276.0
+offset_top = 221.0
+offset_right = 316.0
+offset_bottom = 261.0
+
+[node name="TextureButton" parent="Human2" index="0"]
+offset_left = 480.0
+offset_top = 262.0
+offset_right = 520.0
+offset_bottom = 302.0
+
+[node name="Human3" parent="." instance=ExtResource("3_eglq2")]
+
+[node name="Human4" parent="." instance=ExtResource("3_eglq2")]
+
+[node name="Human5" parent="." instance=ExtResource("3_eglq2")]
+
+[node name="Human6" parent="." instance=ExtResource("3_eglq2")]
+
+[node name="Human7" parent="." instance=ExtResource("3_eglq2")]
+
+[connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
+[connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
+
+[editable path="Human"]
+[editable path="Human2"]
+[editable path="Human3"]
+[editable path="Human4"]
+[editable path="Human5"]
+[editable path="Human6"]
+[editable path="Human7"]
