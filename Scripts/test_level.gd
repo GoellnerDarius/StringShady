@@ -24,18 +24,18 @@ func _ready():
 	
 func Spawnhumans(Amount):
 	for n in Amount:
-		var randomnumber: int = randi_range(0,3)
+		var randomnumber: int = randi_range(0,humanSprite.size()-1)
 		var child: TextureButton =  HumanSpawnPoints[n].get_child(0) 
 		child.texture_normal = humanSprite[randomnumber]
 		HumanSpawnPoints[n].scale = HUMAN_SCALE
 		StringAssociate(n)
 
 func StringAssociate(currentHuman):
-	var randomnumber:int = randi_range(0,stringSprite.size())
+	var randomnumber:int = randi_range(0,stringSprite.size()-1)
 	underwareHuman_map[currentHuman] = randomnumber
 
 func FindAnUnderWare() -> int:
-	var randomnumber:int = randi_range(0,stringSprite.size())
+	var randomnumber:int = randi_range(0,stringSprite.size()-1)
 	for n in underwareHuman_map:
 		if randomnumber == underwareHuman_map[n]:
 			return randomnumber
