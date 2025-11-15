@@ -10,7 +10,8 @@ func _ready() -> void:
 		var lable :Label
 		lable=Label.new()
 		lable.text=str(highscore)+": "+str(highscores[highscore])
-		#center text
+		lable.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		lable.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		container.add_child(lable)
 	pass
 
