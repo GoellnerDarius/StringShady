@@ -26,11 +26,18 @@ var nextUnderWare:int
 var underwareHuman_map : Array[int]
 var underwareHumanConst :Array[int]
 
-
+var current_wave: int = 1
+var starting_humans: int = 3
+var max_waves: int = 5
 
 
 func _ready():
-	Spawnhumans(7)
+	StartWave()
+
+func StartWave():
+	var humans_to_spawn = starting_humans + (current_wave - 1)
+	ClearRound()
+	Spawnhumans(humans_to_spawn)
 	SpawnUnderWare(FindAnUnderWare())
 	
 	
