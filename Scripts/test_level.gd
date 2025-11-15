@@ -2,6 +2,7 @@ extends Node2D
 
 const HUMAN_SCALE = Vector2(0.125, 0.125)
 
+@export var stringSpriteUI : Array[Texture2D]
 @export var stringSprite : Array[Texture2D]
 @export var humanSprite0 : Array[Texture2D] 
 @export var humanSprite1 : Array[Texture2D] 
@@ -70,6 +71,10 @@ func SpawnUnderWare(UnderWare):
 	nextUnderWare = UnderWare
 
 func RoundWon():
+	pass
+
+func addUnderware(Index):
+	
 	pass
 
 func _on_texture_button_button_up(extra_arg_0):
