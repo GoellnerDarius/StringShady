@@ -1,0 +1,160 @@
+[gd_scene load_steps=20 format=3 uid="uid://fotka8c1eyim"]
+
+[ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_2ehcw"]
+[ext_resource type="Texture2D" uid="uid://bdp7kt4ow23fn" path="res://Assets/Strings/assets_sa_1600/06_tanga_1.png" id="2_kep4p"]
+[ext_resource type="Texture2D" uid="uid://b06n5gsua6jh1" path="res://Assets/Strings/String_1.png" id="3_m22xh"]
+[ext_resource type="Texture2D" uid="uid://c818ykcvtw5lb" path="res://Assets/Strings/String_2.png" id="4_s5mik"]
+[ext_resource type="Texture2D" uid="uid://qk47wg0douts" path="res://Assets/Strings/String_3.png" id="5_vm1dv"]
+[ext_resource type="Texture2D" uid="uid://b2aj2u6w2pseo" path="res://Assets/ProtoypeFolder/111675360QM9_OF_F-4163753176.jpg" id="6_jigyv"]
+[ext_resource type="Texture2D" uid="uid://bgav0j4fssemv" path="res://Assets/Persons/Mensch_1_String_1_ohne.png" id="7_8ua08"]
+[ext_resource type="Texture2D" uid="uid://xdkarfgk2pjr" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_2.png" id="8_wccde"]
+[ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="9_rni1e"]
+[ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="10_pu1wx"]
+[ext_resource type="Texture2D" uid="uid://bl0m2vxttfbq6" path="res://Assets/Persons/Mensch_1_String_1_mit.png" id="11_vho5h"]
+[ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/Strings/assets_sa_1600/01_Slingshot_unloaded.png" id="12_uaecg"]
+[ext_resource type="PackedScene" path="res://Scenes/HumanButton.tscn" id="13_hvoqw"]
+[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="14_8g8bk"]
+[ext_resource type="Texture2D" uid="uid://bfn6oow2vt77m" path="res://Assets/Strings/assets_sa_1600/00_Whiteboard.png" id="15_kep4p"]
+[ext_resource type="Texture2D" uid="uid://v5lwugnls2un" path="res://Assets/Strings/assets_sa_1600/02_basket.png" id="16_vm1dv"]
+[ext_resource type="Texture2D" uid="uid://dosfemsj7c6rp" path="res://Assets/Strings/assets_sa_1600/05_thermometer_epmty.png" id="17_jigyv"]
+[ext_resource type="PackedScene" uid="uid://bx05c60f5ojlk" path="res://Scenes/Timer.tscn" id="18_8ua08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vm1dv"]
+
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
+script = ExtResource("1_2ehcw")
+stringSpriteUI = Array[Texture2D]([ExtResource("2_kep4p"), ExtResource("2_kep4p"), ExtResource("2_kep4p"), ExtResource("2_kep4p"), ExtResource("2_kep4p")])
+stringSprite = Array[Texture2D]([ExtResource("3_m22xh"), ExtResource("4_s5mik"), ExtResource("5_vm1dv"), ExtResource("6_jigyv")])
+humanSprite0 = Array[Texture2D]([ExtResource("7_8ua08"), ExtResource("8_wccde"), ExtResource("9_rni1e")])
+humanSprite1 = Array[Texture2D]([ExtResource("10_pu1wx"), ExtResource("10_pu1wx"), ExtResource("9_rni1e")])
+humanSprite2 = Array[Texture2D]([ExtResource("11_vho5h")])
+humanSprite3 = Array[Texture2D]([ExtResource("11_vho5h")])
+humanSprite4 = Array[Texture2D]([ExtResource("11_vho5h")])
+humanSprite5 = Array[Texture2D]([ExtResource("11_vho5h")])
+humanSprite6 = Array[Texture2D]([ExtResource("11_vho5h")])
+humanSprite7 = Array[Texture2D]([ExtResource("11_vho5h")])
+humanSprite8 = Array[Texture2D]([ExtResource("11_vho5h")])
+HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
+stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/String2")]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Slingshot" type="Sprite2D" parent="Node2D"]
+position = Vector2(4068, 1811)
+texture = ExtResource("12_uaecg")
+
+[node name="String2" type="Sprite2D" parent="Node2D/Slingshot"]
+scale = Vector2(0.05, 0.05)
+
+[node name="Basket" type="Sprite2D" parent="Node2D"]
+position = Vector2(1055, 528)
+
+[node name="String1" type="Sprite2D" parent="Node2D/Basket"]
+scale = Vector2(0.05, 0.05)
+
+[node name="Human" parent="." instance=ExtResource("13_hvoqw")]
+offset_left = 405.0
+offset_top = 31.0
+offset_right = 445.0
+offset_bottom = 71.0
+
+[node name="Human2" parent="." instance=ExtResource("13_hvoqw")]
+offset_left = 276.0
+offset_top = 221.0
+offset_right = 316.0
+offset_bottom = 261.0
+
+[node name="TextureButton" parent="Human2" index="0"]
+offset_left = 480.0
+offset_top = 262.0
+offset_right = 520.0
+offset_bottom = 302.0
+
+[node name="Human3" parent="." instance=ExtResource("13_hvoqw")]
+offset_left = 953.0
+offset_top = 167.0
+offset_right = 993.0
+offset_bottom = 207.0
+
+[node name="Human4" parent="." instance=ExtResource("13_hvoqw")]
+offset_left = 94.0
+offset_top = 401.0
+offset_right = 134.0
+offset_bottom = 441.0
+
+[node name="Human5" parent="." instance=ExtResource("13_hvoqw")]
+offset_left = 296.0
+offset_top = 73.0
+offset_right = 336.0
+offset_bottom = 113.0
+
+[node name="Human6" parent="." instance=ExtResource("13_hvoqw")]
+
+[node name="Human7" parent="." instance=ExtResource("13_hvoqw")]
+offset_left = 851.0
+offset_top = 348.0
+offset_right = 891.0
+offset_bottom = 388.0
+
+[node name="StringButton" parent="." instance=ExtResource("14_8g8bk")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="00Whiteboard" type="Sprite2D" parent="CanvasLayer/CenterContainer"]
+z_index = -2
+y_sort_enabled = true
+scale = Vector2(0.45319444, 0.45138893)
+texture = ExtResource("15_kep4p")
+
+[node name="01SlingshotUnloaded" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(559, 398)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("12_uaecg")
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="02Basket" type="Sprite2D" parent="CanvasLayer/BoxContainer"]
+position = Vector2(384.99997, 201.99998)
+scale = Vector2(0.62222224, 0.62222224)
+texture = ExtResource("16_vm1dv")
+
+[node name="05ThermometerEpmty" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(524, 352)
+scale = Vector2(0.40763888, 0.40763888)
+texture = ExtResource("17_jigyv")
+
+[node name="ProgressBar" parent="CanvasLayer/05ThermometerEpmty" instance=ExtResource("18_8ua08")]
+offset_left = -1123.5435
+offset_top = 613.28796
+offset_right = -421.94208
+offset_bottom = 637.81946
+theme_override_styles/background = SubResource("StyleBoxEmpty_vm1dv")
+show_percentage = false
+
+[connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
+[connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
+[connection signal="button_up" from="Human3/TextureButton" to="." method="_on_texture_button_button_up" binds= [2]]
+[connection signal="button_up" from="Human4/TextureButton" to="." method="_on_texture_button_button_up" binds= [3]]
+[connection signal="button_up" from="Human5/TextureButton" to="." method="_on_texture_button_button_up" binds= [4]]
+[connection signal="button_up" from="Human6/TextureButton" to="." method="_on_texture_button_button_up" binds= [5]]
+[connection signal="button_up" from="Human7/TextureButton" to="." method="_on_texture_button_button_up" binds= [6]]
+
+[editable path="Human"]
+[editable path="Human2"]
+[editable path="Human3"]
+[editable path="Human4"]
+[editable path="Human5"]
+[editable path="Human6"]
+[editable path="Human7"]
