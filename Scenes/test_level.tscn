@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=25 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="PackedScene" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cvbmj8dqs7ekw" path="res://Assets/Strings/String_6.png" id="8_7alf0"]
 [ext_resource type="Texture2D" uid="uid://cfmiybfqeg2i8" path="res://Assets/Strings/assets_sa_1744/06_tanga_7.png" id="8_i3ufj"]
 [ext_resource type="Texture2D" uid="uid://b5ckbn8nxxu7f" path="res://Assets/Strings/String_7.png" id="9_260qw"]
+[ext_resource type="PackedScene" path="res://Scenes/Ui.tscn" id="24_0j4h4"]
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
 script = ExtResource("1_iti4p")
@@ -40,10 +41,13 @@ humanSprite8 = Array[Texture2D]([ExtResource("4_2yvf5")])
 HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
 stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/String2")]
 
+[node name="CanvasLayer" parent="." instance=ExtResource("24_0j4h4")]
+layer = 0
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Slingshot" type="Sprite2D" parent="Node2D"]
-position = Vector2(603, 537)
+position = Vector2(612, 568)
 texture = ExtResource("4_btda1")
 
 [node name="String2" type="Sprite2D" parent="Node2D/Slingshot"]
@@ -104,6 +108,7 @@ visible = false
 [connection signal="button_up" from="Human6/TextureButton" to="." method="_on_texture_button_button_up" binds= [5]]
 [connection signal="button_up" from="Human7/TextureButton" to="." method="_on_texture_button_button_up" binds= [6]]
 
+[editable path="CanvasLayer"]
 [editable path="Human"]
 [editable path="Human2"]
 [editable path="Human3"]
