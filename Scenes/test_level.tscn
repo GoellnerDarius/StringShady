@@ -1,34 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=6 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="Texture2D" uid="uid://b2aj2u6w2pseo" path="res://Assets/ProtoypeFolder/111675360QM9_OF_F-4163753176.jpg" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://b17a67ecsyjpt" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
 [ext_resource type="Texture2D" uid="uid://yfib1p1sadqd" path="res://Assets/ProtoypeFolder/man-avatar-clipart-illustration-free-png-2353026389.png" id="3_rsyfn"]
+[ext_resource type="Texture2D" uid="uid://ciwh0gv14f787" path="res://Assets/Strings/Slingshot.png" id="4_7w7ni"]
 
-[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints")]
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
 script = ExtResource("1_iti4p")
-stringSprite = Array[Texture2D]([ExtResource("2_dtjkg")])
+stringSprite = Array[Texture2D]([ExtResource("2_dtjkg"), ExtResource("2_dtjkg"), ExtResource("2_dtjkg"), ExtResource("2_dtjkg")])
 humanSprite = Array[Texture2D]([ExtResource("3_rsyfn"), ExtResource("3_rsyfn"), ExtResource("3_rsyfn"), ExtResource("3_rsyfn")])
-HumanSpawnPoints = [NodePath("Human"), NodePath("Human2")]
-
-[node name="Button" type="Button" parent="."]
-offset_left = 371.0
-offset_top = 86.0
-offset_right = 462.0
-offset_bottom = 198.0
-text = "Ass 1"
+HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
+stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/String2")]
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Slingshot" type="Sprite2D" parent="Node2D"]
-position = Vector2(99, 76)
+position = Vector2(603, 537)
+texture = ExtResource("4_7w7ni")
 
 [node name="String2" type="Sprite2D" parent="Node2D/Slingshot"]
+scale = Vector2(0.05, 0.05)
 
 [node name="Basket" type="Sprite2D" parent="Node2D"]
+position = Vector2(1055, 528)
 
 [node name="String1" type="Sprite2D" parent="Node2D/Basket"]
-position = Vector2(99, 76)
+scale = Vector2(0.05, 0.05)
 
 [node name="Human" parent="." instance=ExtResource("3_eglq2")]
 offset_left = 405.0
@@ -60,6 +58,11 @@ offset_bottom = 302.0
 
 [connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
 [connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
+[connection signal="button_up" from="Human3/TextureButton" to="." method="_on_texture_button_button_up" binds= [2]]
+[connection signal="button_up" from="Human4/TextureButton" to="." method="_on_texture_button_button_up" binds= [3]]
+[connection signal="button_up" from="Human5/TextureButton" to="." method="_on_texture_button_button_up" binds= [4]]
+[connection signal="button_up" from="Human6/TextureButton" to="." method="_on_texture_button_button_up" binds= [5]]
+[connection signal="button_up" from="Human7/TextureButton" to="." method="_on_texture_button_button_up" binds= [6]]
 
 [editable path="Human"]
 [editable path="Human2"]
