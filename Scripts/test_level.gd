@@ -50,20 +50,14 @@ var current_wave: int = 1
 var starting_humans: int = 3
 var max_waves: int = 5
 
-@export var selection_time: float = 5.0
-var selection_timer: Timer
+@export var min_human_time: float = 10.0
+@export var max_human_time: float = 20.0
+var human_timers: Array[Timer]
 
 
 func _ready():
 	Globals.score=0
 	Globals.lifes=3
-
-	# Create selection timer
-	selection_timer = Timer.new()
-	selection_timer.one_shot = true
-	selection_timer.timeout.connect(_on_selection_timeout)
-	add_child(selection_timer)
-
 	StartWave()
 
 func StartWave():
@@ -76,11 +70,23 @@ func StartWave():
 func Spawnhumans(Amount):
 	for n in Amount:
 		var randomnumber: int = randi_range(0,1)
-		var child: TextureButton =  HumanSpawnPoints[n].get_child(0) 
+		var child: TextureButton =  HumanSpawnPoints[n].get_child(0)
 		child.texture_normal = humanSprite[randomnumber][0]
 		HumanSpawnPoints[n].scale = HUMAN_SCALE
 		underwareHuman_map.append(randomnumber)
 		underwareHumanConst.append(randomnumber)
+
+		# Create individual timer for this human
+		var timer = Timer.new()
+		timer.one_shot = true
+		timer.timeout.connect(_on_human_timeout.bind(n))
+		add_child(timer)
+		human_timers.append(timer)
+
+		# Start timer with random duration
+		var random_time = randf_range(min_human_time, max_human_time)
+		timer.start(random_time)
+		print("Human " + str(n) + " has " + str(random_time) + " seconds")
 
 
 
@@ -108,9 +114,6 @@ func SpawnUnderWare(UnderWare):
 	nextUnderWare = UnderWare
 	underwareHuman_map[underwareHuman_map.find(UnderWare)] = -1
 
-	# Start selection timer for this underwear
-	selection_timer.start(selection_time)
-
 	print(underwareHuman_map)
 func RoundWon():
 	print("you won the Round")
@@ -130,6 +133,13 @@ func ClearRound():
 	underwareHumanConst = []
 	stringPoints[0].texture = null
 	stringPoints[1].texture = null
+
+	# Clear all human timers
+	for timer in human_timers:
+		timer.stop()
+		timer.queue_free()
+	human_timers = []
+
 	for i in range(HumanSpawnPoints.size()):
 		var child: TextureButton = HumanSpawnPoints[i].get_child(0)
 		var child1: TextureRect = HumanSpawnPoints[i].get_child(1)
@@ -145,11 +155,12 @@ func RemoveUnderWare():
 func addUnderware(Index, humanIndex):
 	var child: TextureRect =  HumanSpawnPoints[humanIndex].get_child(1)
 	child.texture = stringSprite[Index]
-	
-func _on_texture_button_button_up(extra_arg_0):
-	# Stop the selection timer since player made a choice
-	selection_timer.stop()
 
+	# Stop the human's timer since they got their underwear
+	if humanIndex < human_timers.size():
+		human_timers[humanIndex].stop()
+
+func _on_texture_button_button_up(extra_arg_0):
 	print("Human"+ str(extra_arg_0) + "CurrentString"+ str(underwareHuman_map[extra_arg_0]))
 	if (underwareHumanConst[extra_arg_0] == currentUnderware):
 		Globals.score+=10
@@ -170,25 +181,23 @@ func _on_texture_button_button_up(extra_arg_0):
 	else:
 		RemoveUnderWare()
 
-func _on_selection_timeout():
-	print("Time's up! Lost a life.")
+func _on_human_timeout(human_index: int):
+	print("Human " + str(human_index) + " ran out of time! Lost a life.")
 	Globals.lifes -= 1
 
 	if Globals.lifes <= 0:
 		get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
 		return
 
-	# Skip to next underwear (assign current one to first matching human automatically)
-#	for i in range(underwareHumanConst.size()):
-#		if underwareHumanConst[i] == currentUnderware:
-#			addUnderware(currentUnderware, i)
-#			break
+	# Mark this human as served (even though they timed out)
+	var underwear_type = underwareHumanConst[human_index]
+	addUnderware(underwear_type, human_index)
+	underwareHuman_map[human_index] = -1
 
+	# Check if round is complete
 	var endamount:int = 0
 	for n in underwareHuman_map:
 		if n == -1:
 			endamount +=1
-	if endamount != underwareHuman_map.size():
-		SpawnUnderWare(FindAnUnderWare())
-	else:
-		RemoveUnderWare()
+	if endamount == underwareHuman_map.size():
+		RoundWon()
