@@ -71,7 +71,20 @@ func SpawnUnderWare(UnderWare):
 	print(underwareHuman_map)
 func RoundWon():
 	print("you won the Round")
+	#ClearRound()
+	Spawnhumans(2)
 	pass
+	
+
+func ClearRound():
+	underwareHumanConst = []
+	for n in HumanSpawnPoints:
+		var child:TextureButton =HumanSpawnPoints[n].get_child(0)
+		var child1:TextureRect =HumanSpawnPoints[n].get_child(1)
+		child.texture_normal = null
+		child1.texture = null
+
+
 func RemoveUnderWare():
 	if stringPoints[0].texture == null:
 		RoundWon()
