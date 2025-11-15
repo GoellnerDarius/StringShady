@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=3 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
+[ext_resource type="Texture2D" uid="uid://b2aj2u6w2pseo" path="res://Assets/ProtoypeFolder/111675360QM9_OF_F-4163753176.jpg" id="2_dtjkg"]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_iti4p")
+stringSprite = Array[Texture2D]([ExtResource("2_dtjkg")])
+
+[node name="Button" type="Button" parent="."]
+offset_left = 371.0
+offset_top = 86.0
+offset_right = 462.0
+offset_bottom = 198.0
+text = "Ass 1"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Slingshot" type="Sprite2D" parent="Node2D"]
+position = Vector2(99, 76)
+
+[node name="String2" type="Sprite2D" parent="Node2D/Slingshot"]
+
+[node name="Basket" type="Sprite2D" parent="Node2D"]
+
+[node name="String1" type="Sprite2D" parent="Node2D/Basket"]
+position = Vector2(99, 76)
