@@ -1,24 +1,33 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=24 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
-[ext_resource type="Texture2D" uid="uid://b2aj2u6w2pseo" path="res://Assets/ProtoypeFolder/111675360QM9_OF_F-4163753176.jpg" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://b17a67ecsyjpt" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
 [ext_resource type="Texture2D" uid="uid://b06n5gsua6jh1" path="res://Assets/Strings/String_1.png" id="3_so54a"]
 [ext_resource type="Texture2D" uid="uid://bdp7kt4ow23fn" path="res://Assets/Strings/assets_sa_1600/06_tanga_1.png" id="3_xq3o0"]
+[ext_resource type="Texture2D" uid="uid://b62a4lmd7bb3r" path="res://Assets/Strings/assets_sa_1744/06_tanga_2.png" id="3_y42of"]
+[ext_resource type="Texture2D" uid="uid://dsc5u4clxo7rg" path="res://Assets/Strings/assets_sa_1744/06_tanga_3.png" id="4_0j4h4"]
 [ext_resource type="Texture2D" uid="uid://bl0m2vxttfbq6" path="res://Assets/Persons/Mensch_1_String_1_mit.png" id="4_2yvf5"]
 [ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/Strings/assets_sa_1600/01_Slingshot_unloaded.png" id="4_btda1"]
 [ext_resource type="Texture2D" uid="uid://c818ykcvtw5lb" path="res://Assets/Strings/String_2.png" id="4_sw8nc"]
 [ext_resource type="Texture2D" uid="uid://bgav0j4fssemv" path="res://Assets/Persons/Mensch_1_String_1_ohne.png" id="5_2yvf5"]
 [ext_resource type="Texture2D" uid="uid://xdkarfgk2pjr" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_2.png" id="5_akkqd"]
+[ext_resource type="Texture2D" uid="uid://can2gl6upweu6" path="res://Assets/Strings/assets_sa_1744/06_tanga_4.png" id="5_v608p"]
 [ext_resource type="Texture2D" uid="uid://qk47wg0douts" path="res://Assets/Strings/String_3.png" id="5_x6ft1"]
 [ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="6_8v7by"]
+[ext_resource type="Texture2D" uid="uid://dirbkunlntm4g" path="res://Assets/Strings/assets_sa_1744/06_tanga_5.png" id="6_0212m"]
 [ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="6_btda1"]
+[ext_resource type="Texture2D" uid="uid://btw0e8wg8yym0" path="res://Assets/Strings/String_4.png" id="6_p51s7"]
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="7_8v7by"]
+[ext_resource type="Texture2D" uid="uid://l1sfbiyjn7mu" path="res://Assets/Strings/String_5.png" id="7_fbmvr"]
+[ext_resource type="Texture2D" uid="uid://bmpurrkffco22" path="res://Assets/Strings/assets_sa_1744/06_tanga_6.png" id="7_xgl4d"]
+[ext_resource type="Texture2D" uid="uid://cvbmj8dqs7ekw" path="res://Assets/Strings/String_6.png" id="8_7alf0"]
+[ext_resource type="Texture2D" uid="uid://cfmiybfqeg2i8" path="res://Assets/Strings/assets_sa_1744/06_tanga_7.png" id="8_i3ufj"]
+[ext_resource type="Texture2D" uid="uid://b5ckbn8nxxu7f" path="res://Assets/Strings/String_7.png" id="9_260qw"]
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
 script = ExtResource("1_iti4p")
-stringSpriteUI = Array[Texture2D]([ExtResource("3_xq3o0"), ExtResource("3_xq3o0"), ExtResource("3_xq3o0"), ExtResource("3_xq3o0"), ExtResource("3_xq3o0")])
-stringSprite = Array[Texture2D]([ExtResource("3_so54a"), ExtResource("4_sw8nc"), ExtResource("5_x6ft1"), ExtResource("2_dtjkg")])
+stringSpriteUI = Array[Texture2D]([ExtResource("3_xq3o0"), ExtResource("3_y42of"), ExtResource("4_0j4h4"), ExtResource("5_v608p"), ExtResource("6_0212m"), ExtResource("7_xgl4d"), ExtResource("8_i3ufj")])
+stringSprite = Array[Texture2D]([ExtResource("3_so54a"), ExtResource("4_sw8nc"), ExtResource("5_x6ft1"), ExtResource("6_p51s7"), ExtResource("7_fbmvr"), ExtResource("8_7alf0"), ExtResource("9_260qw")])
 humanSprite0 = Array[Texture2D]([ExtResource("5_2yvf5"), ExtResource("5_akkqd"), ExtResource("6_8v7by")])
 humanSprite1 = Array[Texture2D]([ExtResource("7_8v7by"), ExtResource("7_8v7by"), ExtResource("6_8v7by")])
 humanSprite2 = Array[Texture2D]([ExtResource("4_2yvf5")])
@@ -38,13 +47,13 @@ position = Vector2(603, 537)
 texture = ExtResource("4_btda1")
 
 [node name="String2" type="Sprite2D" parent="Node2D/Slingshot"]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.5, 0.5)
 
 [node name="Basket" type="Sprite2D" parent="Node2D"]
 position = Vector2(1055, 528)
 
 [node name="String1" type="Sprite2D" parent="Node2D/Basket"]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.5, 0.5)
 
 [node name="Human" parent="." instance=ExtResource("3_eglq2")]
 offset_left = 405.0

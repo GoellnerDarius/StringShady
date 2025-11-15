@@ -1,6 +1,6 @@
 extends Node2D
 
-const HUMAN_SCALE = Vector2(0.125, 0.125)
+const HUMAN_SCALE = Vector2(0.25, 0.25)
 
 @export var stringSpriteUI : Array[Texture2D]
 @export var stringSprite : Array[Texture2D]
@@ -23,64 +23,76 @@ const HUMAN_SCALE = Vector2(0.125, 0.125)
 
 var currentUnderware:int
 var nextUnderWare:int
-var noUnderWareAmount:int
-var underwareHuman_map : Array[int] 
+var underwareHuman_map : Array[int]
+var underwareHumanConst :Array[int]
 
 
 
 
 func _ready():
-	for i in HumanSpawnPoints.size():
-		underwareHuman_map.append(0)
 	Spawnhumans(7)
 	SpawnUnderWare(FindAnUnderWare())
 	
 	
 func Spawnhumans(Amount):
-	noUnderWareAmount += Amount 
 	for n in Amount:
 		var randomnumber: int = randi_range(0,1)
 		var child: TextureButton =  HumanSpawnPoints[n].get_child(0) 
 		child.texture_normal = humanSprite[randomnumber][0]
 		HumanSpawnPoints[n].scale = HUMAN_SCALE
-		StringAssociate(n)
+		underwareHuman_map.append(randomnumber)
+		underwareHumanConst.append(randomnumber)
 
-func StringAssociate(currentHuman):
-	var randomnumber:int = randi_range(0,stringSprite.size()-1)
-	underwareHuman_map[currentHuman] = randomnumber
+
 
 func FindAnUnderWare() -> int:
 	var randomnumber:int = randi_range(0,stringSprite.size()-1)
-	for n in underwareHuman_map:
-		if randomnumber == underwareHuman_map[n]:
-			return randomnumber
+	if underwareHuman_map.has(randomnumber):
+		return randomnumber
 	return FindAnUnderWare()
 	
 func SpawnUnderWare(UnderWare):
-	if noUnderWareAmount < 2:
-		if stringPoints[0].texture == null:
-			RoundWon()
-		else:
-			stringPoints[0].texture = null
+	var endamount:int = 0
+	for n in underwareHuman_map:
+		if n == -1:
+			endamount +=1
+	if endamount == underwareHuman_map.size():
+		RoundWon()
 	if stringPoints[0].texture == null:
 		nextUnderWare = FindAnUnderWare()
 		stringSprite[nextUnderWare]
+		underwareHuman_map[underwareHuman_map.find(nextUnderWare)] = -1
 	currentUnderware = nextUnderWare
-	stringPoints[1].texture = stringSprite[currentUnderware]
-	stringPoints[0].texture = stringSprite[UnderWare]
+	stringPoints[1].texture = stringSpriteUI[currentUnderware]
+	stringPoints[0].texture = stringSpriteUI[UnderWare]
 	nextUnderWare = UnderWare
+	underwareHuman_map[underwareHuman_map.find(UnderWare)] = -1
 
+	print(underwareHuman_map)
 func RoundWon():
+	print("you won the Round")
 	pass
-
+func RemoveUnderWare():
+	if stringPoints[0].texture == null:
+		RoundWon()
+	else:
+		stringPoints[0].texture = null
 func addUnderware(Index, humanIndex):
 	var child: TextureRect =  HumanSpawnPoints[humanIndex].get_child(1)
 	child.texture = stringSprite[Index]
-
+	
 func _on_texture_button_button_up(extra_arg_0):
 	print("Human"+ str(extra_arg_0) + "CurrentString"+ str(underwareHuman_map[extra_arg_0]))
-	if (underwareHuman_map[extra_arg_0] == currentUnderware):
+	if (underwareHumanConst[extra_arg_0] == currentUnderware):
 		print("correct")
 	else:
 		print("wrong")
 	addUnderware(currentUnderware, extra_arg_0)
+	var endamount:int = 0
+	for n in underwareHuman_map:
+		if n == -1:
+			endamount +=1
+	if endamount != underwareHuman_map.size():
+		SpawnUnderWare(FindAnUnderWare())
+	else:
+		RemoveUnderWare()
