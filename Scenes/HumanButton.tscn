@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b17a67ecsyjpt"]
+[gd_scene format=3 uid="uid://bgplbebg3kt2g"]
 
-[node name="Human" type="Control"]
+[node name="BurntHuman" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -12,6 +12,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaseHuman" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BrownHuman" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

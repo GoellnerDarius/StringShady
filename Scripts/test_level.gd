@@ -53,12 +53,37 @@ var max_waves: int = 5
 @export var min_human_time: float = 10.0
 @export var max_human_time: float = 20.0
 var human_timers: Array[Timer]
+var human_initial_times: Array[float]
+var human_brown_overlays: Array[TextureRect]
+var human_burnt_overlays: Array[TextureRect]
 
 
 func _ready():
 	Globals.score=0
 	Globals.lifes=3
 	StartWave()
+
+func _process(delta: float) -> void:
+	# Update brown/burnt overlays based on timer progress
+	for i in range(human_timers.size()):
+		if human_timers[i].is_stopped():
+			continue
+
+		var initial_time = human_initial_times[i]
+		var time_left = human_timers[i].time_left
+		var elapsed = initial_time - time_left
+		var progress = elapsed / initial_time  # 0.0 to 1.0
+
+		# First half: brown fades in (0% to 100%)
+		if progress <= 0.5:
+			var brown_alpha = progress * 2.0  # 0.0 to 1.0 during first half
+			human_brown_overlays[i].modulate.a = brown_alpha
+			human_burnt_overlays[i].modulate.a = 0.0
+		# Second half: burnt fades in (0% to 100%), brown stays at 100%
+		else:
+			human_brown_overlays[i].modulate.a = 1.0
+			var burnt_alpha = (progress - 0.5) * 2.0  # 0.0 to 1.0 during second half
+			human_burnt_overlays[i].modulate.a = burnt_alpha
 
 func StartWave():
 	var humans_to_spawn = starting_humans + (current_wave - 1)
@@ -76,6 +101,26 @@ func Spawnhumans(Amount):
 		underwareHuman_map.append(randomnumber)
 		underwareHumanConst.append(randomnumber)
 
+		# Create brown overlay (starts fully transparent)
+		var brown_overlay = TextureRect.new()
+		brown_overlay.texture = humanSprite[randomnumber][1]
+		brown_overlay.modulate.a = 0.0
+		brown_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		brown_overlay.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		child.add_child(brown_overlay)
+		brown_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		human_brown_overlays.append(brown_overlay)
+
+		# Create burnt overlay (starts fully transparent)
+		var burnt_overlay = TextureRect.new()
+		burnt_overlay.texture = humanSprite[randomnumber][2]
+		burnt_overlay.modulate.a = 0.0
+		burnt_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		burnt_overlay.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		child.add_child(burnt_overlay)
+		burnt_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		human_burnt_overlays.append(burnt_overlay)
+
 		# Create individual timer for this human
 		var timer = Timer.new()
 		timer.one_shot = true
@@ -85,6 +130,7 @@ func Spawnhumans(Amount):
 
 		# Start timer with random duration
 		var random_time = randf_range(min_human_time, max_human_time)
+		human_initial_times.append(random_time)
 		timer.start(random_time)
 		print("Human " + str(n) + " has " + str(random_time) + " seconds")
 
@@ -139,6 +185,16 @@ func ClearRound():
 		timer.stop()
 		timer.queue_free()
 	human_timers = []
+	human_initial_times = []
+
+	# Clear all brown/burnt overlays
+	for overlay in human_brown_overlays:
+		overlay.queue_free()
+	human_brown_overlays = []
+
+	for overlay in human_burnt_overlays:
+		overlay.queue_free()
+	human_burnt_overlays = []
 
 	for i in range(HumanSpawnPoints.size()):
 		var child: TextureButton = HumanSpawnPoints[i].get_child(0)
