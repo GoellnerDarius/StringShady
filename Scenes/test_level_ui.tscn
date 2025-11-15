@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://fotka8c1eyim"]
+[gd_scene load_steps=16 format=3 uid="uid://bp0nmt03btxn4"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_2ehcw"]
 [ext_resource type="Texture2D" uid="uid://bdp7kt4ow23fn" path="res://Assets/Strings/assets_sa_1600/06_tanga_1.png" id="2_kep4p"]
@@ -12,14 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="10_pu1wx"]
 [ext_resource type="Texture2D" uid="uid://bl0m2vxttfbq6" path="res://Assets/Persons/Mensch_1_String_1_mit.png" id="11_vho5h"]
 [ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/Strings/assets_sa_1600/01_Slingshot_unloaded.png" id="12_uaecg"]
-[ext_resource type="PackedScene" path="res://Scenes/HumanButton.tscn" id="13_hvoqw"]
-[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="14_8g8bk"]
-[ext_resource type="Texture2D" uid="uid://bfn6oow2vt77m" path="res://Assets/Strings/assets_sa_1600/00_Whiteboard.png" id="15_kep4p"]
-[ext_resource type="Texture2D" uid="uid://v5lwugnls2un" path="res://Assets/Strings/assets_sa_1600/02_basket.png" id="16_vm1dv"]
-[ext_resource type="Texture2D" uid="uid://dosfemsj7c6rp" path="res://Assets/Strings/assets_sa_1600/05_thermometer_epmty.png" id="17_jigyv"]
-[ext_resource type="PackedScene" uid="uid://bx05c60f5ojlk" path="res://Scenes/Timer.tscn" id="18_8ua08"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vm1dv"]
+[ext_resource type="PackedScene" uid="uid://b17a67ecsyjpt" path="res://Scenes/HumanButton.tscn" id="13_hvoqw"]
+[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="14_8g8bk"]
+[ext_resource type="PackedScene" uid="uid://b1he6bolg5ony" path="res://Scenes/Ui.tscn" id="15_kep4p"]
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
 script = ExtResource("1_2ehcw")
@@ -99,49 +94,7 @@ offset_bottom = 388.0
 [node name="StringButton" parent="." instance=ExtResource("14_8g8bk")]
 visible = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="00Whiteboard" type="Sprite2D" parent="CanvasLayer/CenterContainer"]
-z_index = -2
-y_sort_enabled = true
-scale = Vector2(0.45319444, 0.45138893)
-texture = ExtResource("15_kep4p")
-
-[node name="01SlingshotUnloaded" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(559, 398)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("12_uaecg")
-
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="02Basket" type="Sprite2D" parent="CanvasLayer/BoxContainer"]
-position = Vector2(384.99997, 201.99998)
-scale = Vector2(0.62222224, 0.62222224)
-texture = ExtResource("16_vm1dv")
-
-[node name="05ThermometerEpmty" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(524, 352)
-scale = Vector2(0.40763888, 0.40763888)
-texture = ExtResource("17_jigyv")
-
-[node name="ProgressBar" parent="CanvasLayer/05ThermometerEpmty" instance=ExtResource("18_8ua08")]
-offset_left = -1123.5435
-offset_top = 613.28796
-offset_right = -421.94208
-offset_bottom = 637.81946
-theme_override_styles/background = SubResource("StyleBoxEmpty_vm1dv")
-show_percentage = false
+[node name="CanvasLayer" parent="." instance=ExtResource("15_kep4p")]
 
 [connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
 [connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
