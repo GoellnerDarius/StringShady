@@ -78,16 +78,25 @@ func SpawnUnderWare(UnderWare):
 	print(underwareHuman_map)
 func RoundWon():
 	print("you won the Round")
-	#ClearRound()
-	Spawnhumans(2)
+	current_wave += 1
+
+	if current_wave > max_waves:
+		# Game completed, load end scene
+		get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
+	else:
+		# Start next wave
+		StartWave()
 	pass
-	
+
 
 func ClearRound():
+	underwareHuman_map = []
 	underwareHumanConst = []
-	for n in HumanSpawnPoints:
-		var child:TextureButton =HumanSpawnPoints[n].get_child(0)
-		var child1:TextureRect =HumanSpawnPoints[n].get_child(1)
+	stringPoints[0].texture = null
+	stringPoints[1].texture = null
+	for i in range(HumanSpawnPoints.size()):
+		var child: TextureButton = HumanSpawnPoints[i].get_child(0)
+		var child1: TextureRect = HumanSpawnPoints[i].get_child(1)
 		child.texture_normal = null
 		child1.texture = null
 
