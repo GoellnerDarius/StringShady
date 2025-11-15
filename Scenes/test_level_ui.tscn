@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bp0nmt03btxn4"]
+[gd_scene load_steps=101 format=3 uid="uid://fotka8c1eyim"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_2ehcw"]
 [ext_resource type="Texture2D" uid="uid://bdp7kt4ow23fn" path="res://Assets/Strings/assets_sa_1600/06_tanga_1.png" id="2_kep4p"]
@@ -13,11 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://o0jblvxbprf8" path="res://Assets/Persons/Mensch_1_String_3_state_1.png" id="11_kvbou"]
 [ext_resource type="Texture2D" uid="uid://cttjm78iwoyls" path="res://Assets/Persons/Mensch_1_String_3_state_2.png" id="12_kbfxw"]
 [ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/Strings/assets_sa_1600/01_Slingshot_unloaded.png" id="12_uaecg"]
-[ext_resource type="PackedScene" uid="uid://b17a67ecsyjpt" path="res://Scenes/HumanButton.tscn" id="13_hvoqw"]
+[ext_resource type="PackedScene" uid="uid://bgplbebg3kt2g" path="res://Scenes/HumanButton.tscn" id="13_hvoqw"]
 [ext_resource type="Texture2D" uid="uid://fpsrj6vawm6k" path="res://Assets/Persons/Mensch_1_String_1_state_3.png" id="13_p2g1k"]
-[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="14_8g8bk"]
+[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="14_8g8bk"]
 [ext_resource type="Texture2D" uid="uid://bobbveivo3u7b" path="res://Assets/Persons/Mensch_1_String_4_state_1.png" id="14_xdqyq"]
-[ext_resource type="PackedScene" uid="uid://b1he6bolg5ony" path="res://Scenes/Ui.tscn" id="15_kep4p"]
+[ext_resource type="PackedScene" path="res://Scenes/Ui.tscn" id="15_kep4p"]
 [ext_resource type="Texture2D" uid="uid://cctqerfp5k1yj" path="res://Assets/Persons/Mensch_1_String_4_state_2.png" id="15_usn2q"]
 [ext_resource type="Texture2D" uid="uid://bxq1jngb8dy4q" path="res://Assets/Persons/Mensch_1_String_5_state_1.png" id="16_uqbn3"]
 [ext_resource type="Texture2D" uid="uid://dqv5m01fbgc5a" path="res://Assets/Persons/Mensch_1_String_5_state_2.png" id="17_qeqe1"]
@@ -213,6 +213,14 @@ offset_bottom = 388.0
 visible = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("15_kep4p")]
+
+[connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
+[connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
+[connection signal="button_up" from="Human3/TextureButton" to="." method="_on_texture_button_button_up" binds= [2]]
+[connection signal="button_up" from="Human4/TextureButton" to="." method="_on_texture_button_button_up" binds= [3]]
+[connection signal="button_up" from="Human5/TextureButton" to="." method="_on_texture_button_button_up" binds= [4]]
+[connection signal="button_down" from="Human6/TextureButton" to="." method="_on_texture_button_button_down" binds= [5]]
+[connection signal="button_up" from="Human7/TextureButton" to="." method="_on_texture_button_button_up" binds= [6]]
 
 [editable path="Human"]
 [editable path="Human2"]

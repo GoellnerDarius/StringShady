@@ -271,3 +271,7 @@ func _on_human_timeout(human_index: int):
 			endamount +=1
 	if endamount == underwareHuman_map.size():
 		RoundWon()
+
+
+func _on_texture_button_button_down(extra_arg_0: int) -> void:
+	pass # Replace with function body.
