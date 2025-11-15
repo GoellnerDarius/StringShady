@@ -73,9 +73,9 @@ func SpawnUnderWare(UnderWare):
 func RoundWon():
 	pass
 
-func addUnderware(Index):
-	
-	pass
+func addUnderware(Index, humanIndex):
+	var child: TextureRect =  HumanSpawnPoints[humanIndex].get_child(1)
+	child.texture = stringSprite[Index]
 
 func _on_texture_button_button_up(extra_arg_0):
 	print("Human"+ str(extra_arg_0) + "CurrentString"+ str(underwareHuman_map[extra_arg_0]))
@@ -83,3 +83,4 @@ func _on_texture_button_button_up(extra_arg_0):
 		print("correct")
 	else:
 		print("wrong")
+	addUnderware(currentUnderware, extra_arg_0)

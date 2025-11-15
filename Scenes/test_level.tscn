@@ -28,7 +28,7 @@ humanSprite5 = Array[Texture2D]([ExtResource("4_2yvf5")])
 humanSprite6 = Array[Texture2D]([ExtResource("4_2yvf5")])
 humanSprite7 = Array[Texture2D]([ExtResource("4_2yvf5")])
 humanSprite8 = Array[Texture2D]([ExtResource("4_2yvf5")])
-HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
+HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
 stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/String2")]
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -57,12 +57,6 @@ offset_left = 276.0
 offset_top = 221.0
 offset_right = 316.0
 offset_bottom = 261.0
-
-[node name="TextureButton" parent="Human2" index="0"]
-offset_left = 480.0
-offset_top = 262.0
-offset_right = 520.0
-offset_bottom = 302.0
 
 [node name="Human3" parent="." instance=ExtResource("3_eglq2")]
 offset_left = 953.0
