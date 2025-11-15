@@ -13,13 +13,34 @@ const HUMAN_SCALE = Vector2(0.25, 0.25)
 @export var humanSprite6 : Array[Texture2D] 
 @export var humanSprite7 : Array[Texture2D] 
 @export var humanSprite8 : Array[Texture2D] 
+@export var humanSprite9 : Array[Texture2D] 
+@export var humanSprite10 : Array[Texture2D] 
+@export var humanSprite11 : Array[Texture2D] 
+@export var humanSprite12 : Array[Texture2D] 
+@export var humanSprite13 : Array[Texture2D] 
+@export var humanSprite14 : Array[Texture2D] 
+@export var humanSprite15 : Array[Texture2D] 
+@export var humanSprite16 : Array[Texture2D] 
+@export var humanSprite17 : Array[Texture2D] 
+@export var humanSprite18 : Array[Texture2D] 
+@export var humanSprite19 : Array[Texture2D] 
+@export var humanSprite20 : Array[Texture2D] 
+@export var humanSprite21 : Array[Texture2D] 
+@export var humanSprite22 : Array[Texture2D] 
+@export var humanSprite23 : Array[Texture2D] 
+@export var humanSprite24 : Array[Texture2D] 
+@export var humanSprite25 : Array[Texture2D]
+@export var humanSprite26 : Array[Texture2D]
+@export var humanSprite27 : Array[Texture2D]
 
 @export var HumanSpawnPoints: Array[Control]
 @export var stringPoints: Array[Sprite2D]
 
 @export var stringButton:Array[Control]
 
-@onready var humanSprite = [humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8] 
+@onready var humanSprite = [humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8
+,humanSprite9,humanSprite10,humanSprite11,humanSprite12,humanSprite13,humanSprite14,humanSprite15,humanSprite16,humanSprite17,humanSprite18,humanSprite19
+,humanSprite20,humanSprite21,humanSprite22,humanSprite23,humanSprite24,humanSprite25,humanSprite26,humanSprite27] 
 var currentUnderware:int
 var nextUnderWare:int
 var underwareHuman_map : Array[int]
