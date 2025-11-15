@@ -10,13 +10,14 @@ func _ready() -> void:
 	timeLeft.show_percentage=false
 	timeLeft.min_value=0
 	timeLeft.max_value=time_seconds
-	timeLeft.value=100
+	timeLeft.value=0
 	
 	
 	
 func _process(delta: float) -> void:
-	timeLeft.value=timer.time_left
 	timeLeft.value+=delta
+	if timeLeft.value >= 100:
+		TimeOut()
 	
 	
 	
