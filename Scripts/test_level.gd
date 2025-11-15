@@ -29,10 +29,20 @@ var current_wave: int = 1
 var starting_humans: int = 3
 var max_waves: int = 5
 
+@export var selection_time: float = 5.0
+var selection_timer: Timer
+
 
 func _ready():
 	Globals.score=0
 	Globals.lifes=3
+
+	# Create selection timer
+	selection_timer = Timer.new()
+	selection_timer.one_shot = true
+	selection_timer.timeout.connect(_on_selection_timeout)
+	add_child(selection_timer)
+
 	StartWave()
 
 func StartWave():
@@ -66,6 +76,7 @@ func SpawnUnderWare(UnderWare):
 			endamount +=1
 	if endamount == underwareHuman_map.size():
 		RoundWon()
+		return
 	if stringPoints[0].texture == null:
 		nextUnderWare = FindAnUnderWare()
 		stringSprite[nextUnderWare]
@@ -75,6 +86,9 @@ func SpawnUnderWare(UnderWare):
 	stringPoints[0].texture = stringSpriteUI[UnderWare]
 	nextUnderWare = UnderWare
 	underwareHuman_map[underwareHuman_map.find(UnderWare)] = -1
+
+	# Start selection timer for this underwear
+	selection_timer.start(selection_time)
 
 	print(underwareHuman_map)
 func RoundWon():
@@ -112,6 +126,9 @@ func addUnderware(Index, humanIndex):
 	child.texture = stringSprite[Index]
 	
 func _on_texture_button_button_up(extra_arg_0):
+	# Stop the selection timer since player made a choice
+	selection_timer.stop()
+
 	print("Human"+ str(extra_arg_0) + "CurrentString"+ str(underwareHuman_map[extra_arg_0]))
 	if (underwareHumanConst[extra_arg_0] == currentUnderware):
 		Globals.score+=10
@@ -121,7 +138,31 @@ func _on_texture_button_button_up(extra_arg_0):
 		print("wrong")
 		if Globals.lifes<=0:
 			get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
+			return
 	addUnderware(currentUnderware, extra_arg_0)
+	var endamount:int = 0
+	for n in underwareHuman_map:
+		if n == -1:
+			endamount +=1
+	if endamount != underwareHuman_map.size():
+		SpawnUnderWare(FindAnUnderWare())
+	else:
+		RemoveUnderWare()
+
+func _on_selection_timeout():
+	print("Time's up! Lost a life.")
+	Globals.lifes -= 1
+
+	if Globals.lifes <= 0:
+		get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
+		return
+
+	# Skip to next underwear (assign current one to first matching human automatically)
+#	for i in range(underwareHumanConst.size()):
+#		if underwareHumanConst[i] == currentUnderware:
+#			addUnderware(currentUnderware, i)
+#			break
+
 	var endamount:int = 0
 	for n in underwareHuman_map:
 		if n == -1:
