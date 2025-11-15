@@ -1,4 +1,7 @@
-[gd_scene load_steps=0 format=3 uid="uid://dcsb8an6m564v"]
+[gd_scene load_steps=3 format=3 uid="uid://dcsb8an6m564v"]
+
+[ext_resource type="Script" uid="uid://cfo0nga5xxdnu" path="res://Scripts/StartButton.gd" id="1_28flt"]
+[ext_resource type="Script" uid="uid://c3gkfylj21ueu" path="res://Scripts/ExitButton.gd" id="2_48xlc"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +10,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Start"
+script = ExtResource("1_28flt")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 34.0
+offset_right = 47.0
+offset_bottom = 65.0
+text = "Exit"
+script = ExtResource("2_48xlc")
+
+[connection signal="button_down" from="Start" to="Start" method="_on_button_down"]
+[connection signal="button_down" from="Exit" to="Exit" method="_on_button_down"]
