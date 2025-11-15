@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1he6bolg5ony"]
+[gd_scene load_steps=9 format=3 uid="uid://b1he6bolg5ony"]
 
 [ext_resource type="Texture2D" uid="uid://bfn6oow2vt77m" path="res://Assets/Strings/assets_sa_1600/00_Whiteboard.png" id="1_jft1q"]
 [ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/Strings/assets_sa_1600/01_Slingshot_unloaded.png" id="2_nbgms"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dosfemsj7c6rp" path="res://Assets/Strings/assets_sa_1600/05_thermometer_epmty.png" id="4_qhojq"]
 [ext_resource type="PackedScene" path="res://Scenes/Timer.tscn" id="5_aujua"]
 [ext_resource type="Texture2D" uid="uid://dxkrg3xw0e4jd" path="res://Assets/Strings/04_thermometer_fullcolor.png" id="6_qhojq"]
+[ext_resource type="Texture2D" uid="uid://v5lwugnls2un" path="res://Assets/Strings/assets_sa_1600/02_basket.png" id="7_q7cv7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vm1dv"]
 
@@ -107,3 +108,13 @@ scale = Vector2(0.45, 0.45)
 texture_under = ExtResource("4_qhojq")
 texture_over = ExtResource("4_qhojq")
 texture_progress = ExtResource("6_qhojq")
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_q7cv7")
+expand_mode = 1

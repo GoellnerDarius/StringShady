@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=118 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://bgplbebg3kt2g" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://qk47wg0douts" path="res://Assets/Strings/String_3.png" id="5_x6ft1"]
 [ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="6_8v7by"]
 [ext_resource type="Texture2D" uid="uid://dirbkunlntm4g" path="res://Assets/Strings/assets_sa_1744/06_tanga_5.png" id="6_0212m"]
-[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="6_btda1"]
+[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="6_btda1"]
 [ext_resource type="Texture2D" uid="uid://btw0e8wg8yym0" path="res://Assets/Strings/String_4.png" id="6_p51s7"]
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="7_8v7by"]
 [ext_resource type="Texture2D" uid="uid://l1sfbiyjn7mu" path="res://Assets/Strings/String_5.png" id="7_fbmvr"]
@@ -22,11 +22,18 @@
 [ext_resource type="Texture2D" uid="uid://cvbmj8dqs7ekw" path="res://Assets/Strings/String_6.png" id="8_7alf0"]
 [ext_resource type="Texture2D" uid="uid://cfmiybfqeg2i8" path="res://Assets/Strings/assets_sa_1744/06_tanga_7.png" id="8_i3ufj"]
 [ext_resource type="Texture2D" uid="uid://b5ckbn8nxxu7f" path="res://Assets/Strings/String_7.png" id="9_260qw"]
+[ext_resource type="Texture2D" uid="uid://com8oaemgkiu1" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_1.png" id="16_e0o23"]
+[ext_resource type="Texture2D" uid="uid://d3a3oa6vbp8lu" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_2.png" id="17_u3pbk"]
+[ext_resource type="Texture2D" uid="uid://doq2nfw47ws3x" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_3.png" id="18_wfpcm"]
+[ext_resource type="Texture2D" uid="uid://b2ks06v48m0qi" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_4.png" id="19_nu7l5"]
 [ext_resource type="Texture2D" uid="uid://di4fuk6g1s74l" path="res://Assets/Persons/Mensch_1_String_2_state_2.png" id="20_maxbh"]
+[ext_resource type="Texture2D" uid="uid://cjavddmo2tgve" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_5.png" id="20_o3woh"]
+[ext_resource type="Texture2D" uid="uid://dbpsmvgng0hnk" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_6.png" id="21_1w3du"]
 [ext_resource type="Texture2D" uid="uid://fpsrj6vawm6k" path="res://Assets/Persons/Mensch_1_String_1_state_3.png" id="21_j3qi3"]
 [ext_resource type="Texture2D" uid="uid://o0jblvxbprf8" path="res://Assets/Persons/Mensch_1_String_3_state_1.png" id="22_0jj1n"]
+[ext_resource type="Texture2D" uid="uid://b400kjmkeah2x" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_7.png" id="22_xq7md"]
 [ext_resource type="Texture2D" uid="uid://cttjm78iwoyls" path="res://Assets/Persons/Mensch_1_String_3_state_2.png" id="23_wl6rx"]
-[ext_resource type="PackedScene" path="res://Scenes/Ui.tscn" id="24_0j4h4"]
+[ext_resource type="PackedScene" uid="uid://b1he6bolg5ony" path="res://Scenes/Ui.tscn" id="24_0j4h4"]
 [ext_resource type="Texture2D" uid="uid://bobbveivo3u7b" path="res://Assets/Persons/Mensch_1_String_4_state_1.png" id="24_vwd8i"]
 [ext_resource type="Texture2D" uid="uid://cctqerfp5k1yj" path="res://Assets/Persons/Mensch_1_String_4_state_2.png" id="25_u02wx"]
 [ext_resource type="Texture2D" uid="uid://dj6hlf4lhbcrt" path="res://Assets/Persons/Mensch_1_String_7_state_1.png" id="26_r6tmd"]
@@ -106,11 +113,73 @@
 [ext_resource type="Texture2D" uid="uid://sfql0n7evvfk" path="res://Assets/Persons/Männer/Mensch_4_String_6_state_2.png" id="100_2wxb4"]
 [ext_resource type="Texture2D" uid="uid://b5dhynmqdek6h" path="res://Assets/Persons/Männer/Mensch_4_String_7_state_1.png" id="101_6ikem"]
 [ext_resource type="Texture2D" uid="uid://cr4k5ni2clwg6" path="res://Assets/Persons/Männer/Mensch_4_String_7_state_2.png" id="102_fgrs1"]
+[ext_resource type="Texture2D" uid="uid://dvv6uaaxp5wb2" path="res://Assets/Strings/assets_sa_1600/01_Slingshot_loaded.png" id="107_j3qi3"]
+
+[sub_resource type="Animation" id="Animation_0jj1n"]
+resource_name = "String"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/TextureRect2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("107_j3qi3"), ExtResource("4_btda1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/TextureRect2/String2:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.36666667),
+"transitions": PackedFloat32Array(1, 1e-05),
+"update": 1,
+"values": [Vector2(560, 600), Vector2(560, 519.555)]
+}
+
+[sub_resource type="Animation" id="Animation_wl6rx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/TextureRect2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_btda1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/TextureRect2/String2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(560, 519)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vwd8i"]
+_data = {
+&"RESET": SubResource("Animation_wl6rx"),
+&"String": SubResource("Animation_0jj1n")
+}
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
 script = ExtResource("1_iti4p")
 stringSpriteUI = Array[Texture2D]([ExtResource("3_xq3o0"), ExtResource("3_y42of"), ExtResource("4_0j4h4"), ExtResource("5_v608p"), ExtResource("6_0212m"), ExtResource("7_xgl4d"), ExtResource("8_i3ufj")])
-stringSprite = Array[Texture2D]([ExtResource("3_so54a"), ExtResource("4_sw8nc"), ExtResource("5_x6ft1"), ExtResource("6_p51s7"), ExtResource("7_fbmvr"), ExtResource("8_7alf0"), ExtResource("9_260qw")])
+stringSprite = Array[Texture2D]([ExtResource("3_so54a"), ExtResource("4_sw8nc"), ExtResource("5_x6ft1"), ExtResource("6_p51s7"), ExtResource("7_fbmvr"), ExtResource("8_7alf0"), ExtResource("9_260qw"), ExtResource("16_e0o23"), ExtResource("17_u3pbk"), ExtResource("18_wfpcm"), ExtResource("19_nu7l5"), ExtResource("20_o3woh"), ExtResource("21_1w3du"), ExtResource("22_xq7md")])
 humanSprite0 = Array[Texture2D]([ExtResource("5_2yvf5"), ExtResource("5_akkqd"), ExtResource("6_8v7by")])
 humanSprite1 = Array[Texture2D]([ExtResource("7_8v7by"), ExtResource("7_8v7by"), ExtResource("6_8v7by")])
 humanSprite2 = Array[Texture2D]([ExtResource("7_8v7by"), ExtResource("20_maxbh"), ExtResource("21_j3qi3")])
@@ -154,10 +223,18 @@ humanSprite39 = Array[Texture2D]([ExtResource("97_bcboi"), ExtResource("98_j5o1u
 humanSprite40 = Array[Texture2D]([ExtResource("99_yuicr"), ExtResource("100_2wxb4"), ExtResource("90_qsbav")])
 humanSprite41 = Array[Texture2D]([ExtResource("101_6ikem"), ExtResource("102_fgrs1"), ExtResource("90_qsbav")])
 HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
-stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/String2")]
+stringPoints = [NodePath("CanvasLayer/Control/TextureRect3/String1"), NodePath("CanvasLayer/Control/TextureRect2/String2")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("24_0j4h4")]
 layer = 0
+
+[node name="String2" type="Sprite2D" parent="CanvasLayer/Control/TextureRect2" index="0"]
+position = Vector2(560, 519)
+scale = Vector2(0.5, 0.5)
+
+[node name="String1" type="Sprite2D" parent="CanvasLayer/Control/TextureRect3" index="0"]
+position = Vector2(980, 528)
+scale = Vector2(0.5, 0.5)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -165,14 +242,8 @@ layer = 0
 position = Vector2(612, 568)
 texture = ExtResource("4_btda1")
 
-[node name="String2" type="Sprite2D" parent="Node2D/Slingshot"]
-scale = Vector2(0.5, 0.5)
-
 [node name="Basket" type="Sprite2D" parent="Node2D"]
 position = Vector2(1055, 528)
-
-[node name="String1" type="Sprite2D" parent="Node2D/Basket"]
-scale = Vector2(0.5, 0.5)
 
 [node name="Human" parent="." instance=ExtResource("3_eglq2")]
 offset_left = 405.0
@@ -214,6 +285,11 @@ offset_bottom = 388.0
 
 [node name="StringButton" parent="." instance=ExtResource("6_btda1")]
 visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vwd8i")
+}
 
 [connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
 [connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]

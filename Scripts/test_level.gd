@@ -51,7 +51,7 @@ const HUMAN_SCALE = Vector2(0.25, 0.25)
 @export var stringPoints: Array[Sprite2D]
 
 @export var stringButton:Array[Control]
-
+@onready var animationPlayer:AnimationPlayer = $AnimationPlayer
 @onready var humanSprite = [humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8
 ,humanSprite9,humanSprite10,humanSprite11,humanSprite12,humanSprite13,humanSprite14,humanSprite15,humanSprite16,humanSprite17,humanSprite18,humanSprite19
 ,humanSprite20,humanSprite21,humanSprite22,humanSprite23,humanSprite24,humanSprite25,humanSprite26,humanSprite27] 
@@ -59,6 +59,7 @@ var currentUnderware:int
 var nextUnderWare:int
 var underwareHuman_map : Array[int]
 var underwareHumanConst :Array[int]
+var ManOrWoman :Array[bool]
 
 var current_wave: int = 1
 var starting_humans: int = 3
@@ -108,12 +109,16 @@ func StartWave():
 	
 func Spawnhumans(Amount):
 	for n in Amount:
-		var randomnumber: int = randi_range(0,1)
+		var randomnumber: int = randi_range(0,humanSprite.size()-1)
 		var child: TextureButton =  HumanSpawnPoints[n].get_child(0)
 		child.texture_normal = humanSprite[randomnumber][0]
 		HumanSpawnPoints[n].scale = HUMAN_SCALE
-		underwareHuman_map.append(randomnumber)
-		underwareHumanConst.append(randomnumber)
+		underwareHuman_map.append(randomnumber % 7)
+		underwareHumanConst.append(randomnumber % 7)
+		if randomnumber > 21:
+			ManOrWoman.append(true)
+		else:
+			ManOrWoman.append(false)
 
 		# Create brown overlay (starts fully transparent)
 		var brown_overlay = TextureRect.new()
@@ -191,6 +196,7 @@ func RoundWon():
 func ClearRound():
 	underwareHuman_map = []
 	underwareHumanConst = []
+	ManOrWoman = []
 	stringPoints[0].texture = null
 	stringPoints[1].texture = null
 
@@ -224,8 +230,11 @@ func RemoveUnderWare():
 		stringPoints[0].texture = null
 func addUnderware(Index, humanIndex):
 	var child: TextureRect =  HumanSpawnPoints[humanIndex].get_child(1)
-	child.texture = stringSprite[Index]
-
+	if ManOrWoman[humanIndex]:
+		child.texture = stringSprite[Index+7]
+	else:
+		child.texture = stringSprite[Index]
+	
 	# Stop the human's timer since they got their underwear
 	if humanIndex < human_timers.size():
 		human_timers[humanIndex].stop()
@@ -241,6 +250,7 @@ func _on_texture_button_button_up(extra_arg_0):
 		if Globals.lifes<=0:
 			get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
 			return
+	animationPlayer.play("String")
 	addUnderware(currentUnderware, extra_arg_0)
 	var endamount:int = 0
 	for n in underwareHuman_map:
