@@ -19,8 +19,7 @@ const HUMAN_SCALE = Vector2(0.25, 0.25)
 
 @export var stringButton:Array[Control]
 
-@onready var humanSprite = [humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8]
-
+@onready var humanSprite = [humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8] 
 var currentUnderware:int
 var nextUnderWare:int
 var underwareHuman_map : Array[int]
@@ -32,6 +31,8 @@ var max_waves: int = 5
 
 
 func _ready():
+	Globals.score=0
+	Globals.lifes=3
 	StartWave()
 
 func StartWave():
@@ -113,9 +114,13 @@ func addUnderware(Index, humanIndex):
 func _on_texture_button_button_up(extra_arg_0):
 	print("Human"+ str(extra_arg_0) + "CurrentString"+ str(underwareHuman_map[extra_arg_0]))
 	if (underwareHumanConst[extra_arg_0] == currentUnderware):
+		Globals.score+=10
 		print("correct")
 	else:
+		Globals.lifes-=1
 		print("wrong")
+		if Globals.lifes<=0:
+			get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
 	addUnderware(currentUnderware, extra_arg_0)
 	var endamount:int = 0
 	for n in underwareHuman_map:

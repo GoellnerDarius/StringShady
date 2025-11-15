@@ -14,3 +14,7 @@ config/name="StringShady"
 run/main_scene="uid://c3jdseujn2v7r"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
