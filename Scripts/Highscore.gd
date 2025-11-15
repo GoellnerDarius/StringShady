@@ -1,18 +1,105 @@
 extends Node
 @export var container: VBoxContainer
 @export var HighScorePath :String="user://highscores.json"
+@export var player_score: int = 0
+
+var name_input: LineEdit
+var score_saved: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if container==null:
 		return
-	var highscores=Deserialize()
+
+	var highscores = Deserialize()
+	var player_position = find_player_position(highscores, player_score)
+	var current_position = 0
+	var display_number = 1
+
 	for highscore in highscores:
+		# Insert player input at the correct position (only if in top 10)
+		if current_position == player_position and not score_saved and player_position < 10:
+			add_name_input(display_number)
+			display_number += 1
+
+		# Only show top 10 entries
+		if display_number > 10:
+			break
+
 		var lable :Label
 		lable=Label.new()
-		lable.text=str(highscore)+": "+str(highscores[highscore])
+		lable.text=str(display_number) + ". " + str(highscore)+": "+str(highscores[highscore])
 		lable.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		lable.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		container.add_child(lable)
+		current_position += 1
+		display_number += 1
+
+	# If player score is lowest or list is empty, add input at the end (within top 10)
+	if current_position == player_position and not score_saved and player_position < 10:
+		add_name_input(display_number)
+	# If player is not in top 10, show at position 11
+	elif player_position >= 10 and not score_saved:
+		add_name_input(11)
+	pass
+
+func add_name_input(position: int) -> void:
+	var input_container = HBoxContainer.new()
+	input_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	input_container.alignment = BoxContainer.ALIGNMENT_CENTER
+
+	var position_label = Label.new()
+	position_label.text = str(position) + ". "
+
+	name_input = LineEdit.new()
+	name_input.placeholder_text = "Enter your name"
+	name_input.custom_minimum_size = Vector2(200, 0)
+	name_input.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	name_input.alignment = HORIZONTAL_ALIGNMENT_CENTER
+	name_input.text_submitted.connect(_on_name_submitted)
+
+	var score_label = Label.new()
+	score_label.text = ": " + str(player_score)
+
+	input_container.add_child(position_label)
+	input_container.add_child(name_input)
+	input_container.add_child(score_label)
+	container.add_child(input_container)
+
+	# Focus the input so player can type immediately
+	name_input.call_deferred("grab_focus")
+
+func find_player_position(highscores: Dictionary, score: int) -> int:
+	var position = 0
+	for key in highscores:
+		if score > highscores[key]:
+			return position
+		position += 1
+	return position
+
+func _on_name_submitted(player_name: String) -> void:
+	if player_name.strip_edges() == "":
+		return
+
+	AddHighscore(player_name, player_score)
+	score_saved = true
+
+	# Refresh the display
+	for child in container.get_children():
+		child.queue_free()
+
+	var highscores = Deserialize()
+	var display_number = 1
+	for highscore in highscores:
+		if display_number > 10:
+			break
+		var lable :Label
+		lable=Label.new()
+		lable.text=str(display_number) + ". " + str(highscore)+": "+str(highscores[highscore])
+		lable.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		lable.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		container.add_child(lable)
+		display_number += 1
 	pass
 
 func sort_dict_by_value(input_dict: Dictionary) -> Dictionary:
