@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx05c60f5ojlk"]
+
+[ext_resource type="Texture2D" uid="uid://dckuto266tp7f" path="res://Assets/Textures/FalunRot.png" id="1_37beg"]
+[ext_resource type="Texture2D" uid="uid://dp34864j3iy2k" path="res://Assets/Textures/ZiegelRot.png" id="2_gewlg"]
+[ext_resource type="Script" uid="uid://b4cn2phcygr5x" path="res://Scripts/TimerScript.gd" id="3_7wjiq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_deiwa"]
+texture = ExtResource("1_37beg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_elqhd"]
+texture = ExtResource("2_gewlg")
+
+[node name="ProgressBar" type="ProgressBar" node_paths=PackedStringArray("timer", "timeLeft")]
+offset_right = 335.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxTexture_deiwa")
+theme_override_styles/fill = SubResource("StyleBoxTexture_elqhd")
+script = ExtResource("3_7wjiq")
+time_seconds = 120.0
+timer = NodePath("Timer")
+timeLeft = NodePath(".")
+
+[node name="Timer" type="Timer" parent="."]
