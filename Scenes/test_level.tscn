@@ -1,15 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=11 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="Texture2D" uid="uid://b2aj2u6w2pseo" path="res://Assets/ProtoypeFolder/111675360QM9_OF_F-4163753176.jpg" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://b17a67ecsyjpt" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
-[ext_resource type="Texture2D" uid="uid://yfib1p1sadqd" path="res://Assets/ProtoypeFolder/man-avatar-clipart-illustration-free-png-2353026389.png" id="3_rsyfn"]
-[ext_resource type="Texture2D" uid="uid://ciwh0gv14f787" path="res://Assets/Strings/Slingshot.png" id="4_7w7ni"]
+[ext_resource type="Texture2D" uid="uid://bdp7kt4ow23fn" path="res://Assets/Strings/assets_sa_1600/06_tanga_1.png" id="3_xq3o0"]
+[ext_resource type="Texture2D" uid="uid://bl0m2vxttfbq6" path="res://Assets/Persons/Mensch_1_String_1_mit.png" id="4_2yvf5"]
+[ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/Strings/assets_sa_1600/01_Slingshot_unloaded.png" id="4_btda1"]
+[ext_resource type="Texture2D" uid="uid://bgav0j4fssemv" path="res://Assets/Persons/Mensch_1_String_1_ohne.png" id="5_2yvf5"]
+[ext_resource type="Texture2D" uid="uid://xdkarfgk2pjr" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_2.png" id="5_akkqd"]
+[ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="6_8v7by"]
+[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="6_btda1"]
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
 script = ExtResource("1_iti4p")
-stringSprite = Array[Texture2D]([ExtResource("2_dtjkg"), ExtResource("2_dtjkg"), ExtResource("2_dtjkg"), ExtResource("2_dtjkg")])
-humanSprite = Array[Texture2D]([ExtResource("3_rsyfn"), ExtResource("3_rsyfn"), ExtResource("3_rsyfn"), ExtResource("3_rsyfn")])
+stringSprite = Array[Texture2D]([ExtResource("2_dtjkg"), ExtResource("3_xq3o0"), ExtResource("2_dtjkg"), ExtResource("2_dtjkg")])
+humanSprite0 = Array[Texture2D]([ExtResource("5_2yvf5"), ExtResource("5_akkqd"), ExtResource("6_8v7by")])
+humanSprite1 = Array[Texture2D]([ExtResource("4_2yvf5")])
+humanSprite2 = Array[Texture2D]([ExtResource("4_2yvf5")])
+humanSprite3 = Array[Texture2D]([ExtResource("4_2yvf5")])
+humanSprite4 = Array[Texture2D]([ExtResource("4_2yvf5")])
+humanSprite5 = Array[Texture2D]([ExtResource("4_2yvf5")])
+humanSprite6 = Array[Texture2D]([ExtResource("4_2yvf5")])
+humanSprite7 = Array[Texture2D]([ExtResource("4_2yvf5")])
+humanSprite8 = Array[Texture2D]([ExtResource("4_2yvf5")])
 HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
 stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/String2")]
 
@@ -17,7 +30,7 @@ stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/St
 
 [node name="Slingshot" type="Sprite2D" parent="Node2D"]
 position = Vector2(603, 537)
-texture = ExtResource("4_7w7ni")
+texture = ExtResource("4_btda1")
 
 [node name="String2" type="Sprite2D" parent="Node2D/Slingshot"]
 scale = Vector2(0.05, 0.05)
@@ -47,14 +60,33 @@ offset_right = 520.0
 offset_bottom = 302.0
 
 [node name="Human3" parent="." instance=ExtResource("3_eglq2")]
+offset_left = 953.0
+offset_top = 167.0
+offset_right = 993.0
+offset_bottom = 207.0
 
 [node name="Human4" parent="." instance=ExtResource("3_eglq2")]
+offset_left = 94.0
+offset_top = 401.0
+offset_right = 134.0
+offset_bottom = 441.0
 
 [node name="Human5" parent="." instance=ExtResource("3_eglq2")]
+offset_left = 296.0
+offset_top = 73.0
+offset_right = 336.0
+offset_bottom = 113.0
 
 [node name="Human6" parent="." instance=ExtResource("3_eglq2")]
 
 [node name="Human7" parent="." instance=ExtResource("3_eglq2")]
+offset_left = 851.0
+offset_top = 348.0
+offset_right = 891.0
+offset_bottom = 388.0
+
+[node name="StringButton" parent="." instance=ExtResource("6_btda1")]
+visible = false
 
 [connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
 [connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
