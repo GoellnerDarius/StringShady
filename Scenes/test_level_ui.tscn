@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bp0nmt03btxn4"]
+[gd_scene load_steps=101 format=3 uid="uid://bp0nmt03btxn4"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_2ehcw"]
 [ext_resource type="Texture2D" uid="uid://bdp7kt4ow23fn" path="res://Assets/Strings/assets_sa_1600/06_tanga_1.png" id="2_kep4p"]
@@ -10,11 +10,96 @@
 [ext_resource type="Texture2D" uid="uid://xdkarfgk2pjr" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_2.png" id="8_wccde"]
 [ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="9_rni1e"]
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="10_pu1wx"]
-[ext_resource type="Texture2D" uid="uid://bl0m2vxttfbq6" path="res://Assets/Persons/Mensch_1_String_1_mit.png" id="11_vho5h"]
+[ext_resource type="Texture2D" uid="uid://o0jblvxbprf8" path="res://Assets/Persons/Mensch_1_String_3_state_1.png" id="11_kvbou"]
+[ext_resource type="Texture2D" uid="uid://cttjm78iwoyls" path="res://Assets/Persons/Mensch_1_String_3_state_2.png" id="12_kbfxw"]
 [ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/Strings/assets_sa_1600/01_Slingshot_unloaded.png" id="12_uaecg"]
 [ext_resource type="PackedScene" uid="uid://b17a67ecsyjpt" path="res://Scenes/HumanButton.tscn" id="13_hvoqw"]
+[ext_resource type="Texture2D" uid="uid://fpsrj6vawm6k" path="res://Assets/Persons/Mensch_1_String_1_state_3.png" id="13_p2g1k"]
 [ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="14_8g8bk"]
+[ext_resource type="Texture2D" uid="uid://bobbveivo3u7b" path="res://Assets/Persons/Mensch_1_String_4_state_1.png" id="14_xdqyq"]
 [ext_resource type="PackedScene" uid="uid://b1he6bolg5ony" path="res://Scenes/Ui.tscn" id="15_kep4p"]
+[ext_resource type="Texture2D" uid="uid://cctqerfp5k1yj" path="res://Assets/Persons/Mensch_1_String_4_state_2.png" id="15_usn2q"]
+[ext_resource type="Texture2D" uid="uid://bxq1jngb8dy4q" path="res://Assets/Persons/Mensch_1_String_5_state_1.png" id="16_uqbn3"]
+[ext_resource type="Texture2D" uid="uid://dqv5m01fbgc5a" path="res://Assets/Persons/Mensch_1_String_5_state_2.png" id="17_qeqe1"]
+[ext_resource type="Texture2D" uid="uid://uecwa3sko7ae" path="res://Assets/Persons/Mensch_1_String_6_state_1.png" id="18_6lnon"]
+[ext_resource type="Texture2D" uid="uid://cctvkk880gowl" path="res://Assets/Persons/Mensch_1_String_6_state_2.png" id="19_4o2bd"]
+[ext_resource type="Texture2D" uid="uid://dj6hlf4lhbcrt" path="res://Assets/Persons/Mensch_1_String_7_state_1.png" id="20_x4fxr"]
+[ext_resource type="Texture2D" uid="uid://c7qrmy2p131ab" path="res://Assets/Persons/Mensch_1_String_7_state_2.png" id="21_2wet0"]
+[ext_resource type="Texture2D" uid="uid://cqd3xxa8xmcdy" path="res://Assets/Persons/Mensch_5_String_1_state_1.png" id="22_ji2yk"]
+[ext_resource type="Texture2D" uid="uid://cqrvntn1ju2hd" path="res://Assets/Persons/Mensch_5_String_1_state_2.png" id="23_6qd5u"]
+[ext_resource type="Texture2D" uid="uid://do85ekxjplx82" path="res://Assets/Persons/Mensch_5_verbrutzelt.png" id="24_70a4c"]
+[ext_resource type="Texture2D" uid="uid://bglsufe77oj46" path="res://Assets/Persons/Mensch_5_String_2_state_1.png" id="25_47at4"]
+[ext_resource type="Texture2D" uid="uid://bd7aevmqi1hgr" path="res://Assets/Persons/Mensch_5_String_2_state_2.png" id="26_5ab6t"]
+[ext_resource type="Texture2D" uid="uid://ltw4a5g4moov" path="res://Assets/Persons/Mensch_5_String_3_state_1.png" id="27_wu2je"]
+[ext_resource type="Texture2D" uid="uid://v2324bvln2qd" path="res://Assets/Persons/Mensch_5_String_3_state_2.png" id="28_22afa"]
+[ext_resource type="Texture2D" uid="uid://c8yy4m1xti1is" path="res://Assets/Persons/Mensch_5_String_4_state_1.png" id="29_owtqw"]
+[ext_resource type="Texture2D" uid="uid://c8x8difw37y08" path="res://Assets/Persons/Mensch_5_String_4_state_2.png" id="30_grar6"]
+[ext_resource type="Texture2D" uid="uid://gn8wdvcdlke" path="res://Assets/Persons/Mensch_5_String_5_state_1.png" id="31_g0pup"]
+[ext_resource type="Texture2D" uid="uid://ciuboy31csn5p" path="res://Assets/Persons/Mensch_5_String_5_state_2.png" id="32_5wu6n"]
+[ext_resource type="Texture2D" uid="uid://oklhl8ksnktc" path="res://Assets/Persons/Mensch_5_String_6_state_1.png" id="33_nnyp7"]
+[ext_resource type="Texture2D" uid="uid://bxus110b7jj53" path="res://Assets/Persons/Mensch_5_String_6_state_2.png" id="34_a0r1l"]
+[ext_resource type="Texture2D" uid="uid://byrhqljh5v55j" path="res://Assets/Persons/Mensch_5_String_7_state_1.png" id="35_q6m03"]
+[ext_resource type="Texture2D" uid="uid://c1ooy33vbh7gs" path="res://Assets/Persons/Mensch_5_String_7_state_2.png" id="36_ipim1"]
+[ext_resource type="Texture2D" uid="uid://b0ba56rer3vuf" path="res://Assets/Persons/Mensch_6_String_1_state_1.png" id="37_avmsa"]
+[ext_resource type="Texture2D" uid="uid://cn858b6aoqvg5" path="res://Assets/Persons/Mensch_6_String_1_state_2.png" id="38_k60dy"]
+[ext_resource type="Texture2D" uid="uid://cgi4e5d2px3nb" path="res://Assets/Persons/Mensch_6_verbrutzelt.png" id="39_rgvwt"]
+[ext_resource type="Texture2D" uid="uid://daglioxrx6hg6" path="res://Assets/Persons/Mensch_6_String_2_state_1.png" id="40_wgcg6"]
+[ext_resource type="Texture2D" uid="uid://d0h7jatpqt3pi" path="res://Assets/Persons/Mensch_6_String_2_state_2.png" id="41_wwcvn"]
+[ext_resource type="Texture2D" uid="uid://bhkg0cuaxal3q" path="res://Assets/Persons/Mensch_6_String_3_state_1.png" id="42_nk8ia"]
+[ext_resource type="Texture2D" uid="uid://cfr83dhyeuslm" path="res://Assets/Persons/Mensch_6_String_3_state_2.png" id="43_xvdbs"]
+[ext_resource type="Texture2D" uid="uid://c8x5eb3tp0fb1" path="res://Assets/Persons/Mensch_6_String_4_state_1.png" id="44_uq7d0"]
+[ext_resource type="Texture2D" uid="uid://b3d0pw2qn3erc" path="res://Assets/Persons/Mensch_6_String_4_state_2.png" id="45_hhj8v"]
+[ext_resource type="Texture2D" uid="uid://vsfosvy7kk0r" path="res://Assets/Persons/Mensch_6_String_5_state_1.png" id="46_natwb"]
+[ext_resource type="Texture2D" uid="uid://db608eb2mbk73" path="res://Assets/Persons/Mensch_6_String_5_state_2.png" id="47_4g2nc"]
+[ext_resource type="Texture2D" uid="uid://fcclk8o6gvrr" path="res://Assets/Persons/Mensch_6_String_6_state_1.png" id="48_xsylr"]
+[ext_resource type="Texture2D" uid="uid://dvrga1iho33i2" path="res://Assets/Persons/Mensch_6_String_6_state_2.png" id="49_wtwqs"]
+[ext_resource type="Texture2D" uid="uid://yajlqocr8xjy" path="res://Assets/Persons/Mensch_6_String_7_state_1.png" id="50_lkmnk"]
+[ext_resource type="Texture2D" uid="uid://b78q2tolnaw45" path="res://Assets/Persons/Mensch_6_String_7_state_2.png" id="51_jlr5h"]
+[ext_resource type="Texture2D" uid="uid://dmagcr8c3j42k" path="res://Assets/Persons/Männer/Mensch_2_String_1_state_1.png" id="52_ni4n0"]
+[ext_resource type="Texture2D" uid="uid://spoajij1jrs" path="res://Assets/Persons/Männer/Mensch_2_String_1_state_2.png" id="53_xwafv"]
+[ext_resource type="Texture2D" uid="uid://brr2bhsp4f2k7" path="res://Assets/Persons/Männer/Mensch_2_verbrutzelt.png" id="54_l7ydr"]
+[ext_resource type="Texture2D" uid="uid://bgg7r04sfoh1u" path="res://Assets/Persons/Männer/Mensch_2_String_2_state_1.png" id="55_6m3bm"]
+[ext_resource type="Texture2D" uid="uid://brpfyqn1yc1op" path="res://Assets/Persons/Männer/Mensch_2_String_2_state_2.png" id="56_ke0mo"]
+[ext_resource type="Texture2D" uid="uid://crxf4pgfkcfkc" path="res://Assets/Persons/Männer/Mensch_2_String_3_state_1.png" id="57_a6lom"]
+[ext_resource type="Texture2D" uid="uid://mjrspleyf8mu" path="res://Assets/Persons/Männer/Mensch_2_String_3_state_2.png" id="58_6v67f"]
+[ext_resource type="Texture2D" uid="uid://bdske1eqw8lqn" path="res://Assets/Persons/Männer/Mensch_2_String_4_state_1.png" id="59_68hsq"]
+[ext_resource type="Texture2D" uid="uid://bx7w3ow7v2eiq" path="res://Assets/Persons/Männer/Mensch_2_String_4_state_2.png" id="60_bagnf"]
+[ext_resource type="Texture2D" uid="uid://6w6apbj87ecr" path="res://Assets/Persons/Männer/Mensch_2_String_5_state_1.png" id="61_txoub"]
+[ext_resource type="Texture2D" uid="uid://b3do7hfe7a4g4" path="res://Assets/Persons/Männer/Mensch_2_String_5_state_2.png" id="62_6aqf3"]
+[ext_resource type="Texture2D" uid="uid://bcb1mcm173rpx" path="res://Assets/Persons/Männer/Mensch_2_String_6_state_1.png" id="63_ekbgs"]
+[ext_resource type="Texture2D" uid="uid://dkhgnlnyfuovt" path="res://Assets/Persons/Männer/Mensch_2_String_6_state_2.png" id="64_qt4ec"]
+[ext_resource type="Texture2D" uid="uid://bfpql0eil5nym" path="res://Assets/Persons/Männer/Mensch_2_String_7_state_1.png" id="65_c4w2x"]
+[ext_resource type="Texture2D" uid="uid://dhr1y2k3qck27" path="res://Assets/Persons/Männer/Mensch_2_String_7_state_2.png" id="66_v3tmw"]
+[ext_resource type="Texture2D" uid="uid://bcoglj23adivh" path="res://Assets/Persons/Männer/Mensch_3_String_1_state_1.png" id="67_gonfo"]
+[ext_resource type="Texture2D" uid="uid://y1vpmk7m8dyt" path="res://Assets/Persons/Männer/Mensch_3_String_1_state_2.png" id="68_4egja"]
+[ext_resource type="Texture2D" uid="uid://da03telhedgd6" path="res://Assets/Persons/Männer/Mensch_3_verbrutzelt.png" id="69_wqa33"]
+[ext_resource type="Texture2D" uid="uid://d357jgn83aih3" path="res://Assets/Persons/Männer/Mensch_3_String_2_state_1.png" id="70_7x25k"]
+[ext_resource type="Texture2D" uid="uid://cs4q7qxrh018j" path="res://Assets/Persons/Männer/Mensch_3_String_2_state_2.png" id="71_nlg3h"]
+[ext_resource type="Texture2D" uid="uid://dwy1lnlhwymx3" path="res://Assets/Persons/Männer/Mensch_3_String_3_state_1.png" id="72_agc3e"]
+[ext_resource type="Texture2D" uid="uid://brckkgtqqbhqj" path="res://Assets/Persons/Männer/Mensch_3_String_3_state_2.png" id="73_a806v"]
+[ext_resource type="Texture2D" uid="uid://bqkemrxq63858" path="res://Assets/Persons/Männer/Mensch_3_String_4_state_1.png" id="74_lxdoy"]
+[ext_resource type="Texture2D" uid="uid://r3dlyplel8pp" path="res://Assets/Persons/Männer/Mensch_3_String_4_state_2.png" id="75_rhcao"]
+[ext_resource type="Texture2D" uid="uid://dcn05up5mwn00" path="res://Assets/Persons/Männer/Mensch_3_String_5_state_1.png" id="76_sptwi"]
+[ext_resource type="Texture2D" uid="uid://c2gbxj8gaay6d" path="res://Assets/Persons/Männer/Mensch_3_String_5_state_2.png" id="77_gstye"]
+[ext_resource type="Texture2D" uid="uid://dlms7b6utpq2q" path="res://Assets/Persons/Männer/Mensch_3_String_6_state_1.png" id="78_pa3x3"]
+[ext_resource type="Texture2D" uid="uid://25h5t00sqbyw" path="res://Assets/Persons/Männer/Mensch_3_String_6_state_2.png" id="79_l8lvs"]
+[ext_resource type="Texture2D" uid="uid://cr70ekptp670k" path="res://Assets/Persons/Männer/Mensch_3_String_7_state_1.png" id="80_tcurk"]
+[ext_resource type="Texture2D" uid="uid://d1j0m10ip82ab" path="res://Assets/Persons/Männer/Mensch_3_String_7_state_2.png" id="81_5slbh"]
+[ext_resource type="Texture2D" uid="uid://3hw10vmrj4wt" path="res://Assets/Persons/Männer/Mensch_4_String_1_state_1.png" id="82_cgnll"]
+[ext_resource type="Texture2D" uid="uid://bmyj4p60wtgje" path="res://Assets/Persons/Männer/Mensch_4_String_1_state_2.png" id="83_a3dsb"]
+[ext_resource type="Texture2D" uid="uid://dbc1fqj1rt83j" path="res://Assets/Persons/Männer/Mensch_4_verbrutzelt.png" id="84_ilb4o"]
+[ext_resource type="Texture2D" uid="uid://bs7j6tpvqho1x" path="res://Assets/Persons/Männer/Mensch_4_String_2_state_1.png" id="85_gsjnr"]
+[ext_resource type="Texture2D" uid="uid://blns04vcggnvm" path="res://Assets/Persons/Männer/Mensch_4_String_2_state_2.png" id="86_gfy2f"]
+[ext_resource type="Texture2D" uid="uid://bown06js1jtim" path="res://Assets/Persons/Männer/Mensch_4_String_3_state_1.png" id="87_mpwu7"]
+[ext_resource type="Texture2D" uid="uid://q7g44lfcduhd" path="res://Assets/Persons/Männer/Mensch_4_String_3_state_2.png" id="88_hwk3c"]
+[ext_resource type="Texture2D" uid="uid://dprktdw6dh2cd" path="res://Assets/Persons/Männer/Mensch_4_String_4_state_1.png" id="89_ipdyy"]
+[ext_resource type="Texture2D" uid="uid://526bkjdj2op8" path="res://Assets/Persons/Männer/Mensch_4_String_4_state_2.png" id="90_54320"]
+[ext_resource type="Texture2D" uid="uid://dbrfx1dadj01u" path="res://Assets/Persons/Männer/Mensch_4_String_5_state_1.png" id="91_kf26y"]
+[ext_resource type="Texture2D" uid="uid://ddaytfyiogm4c" path="res://Assets/Persons/Männer/Mensch_4_String_5_state_2.png" id="92_co4jo"]
+[ext_resource type="Texture2D" uid="uid://cet58cn5n3km1" path="res://Assets/Persons/Männer/Mensch_4_String_6_state_1.png" id="93_mo1e8"]
+[ext_resource type="Texture2D" uid="uid://sfql0n7evvfk" path="res://Assets/Persons/Männer/Mensch_4_String_6_state_2.png" id="94_uix0d"]
+[ext_resource type="Texture2D" uid="uid://b5dhynmqdek6h" path="res://Assets/Persons/Männer/Mensch_4_String_7_state_1.png" id="95_h8hdy"]
+[ext_resource type="Texture2D" uid="uid://cr4k5ni2clwg6" path="res://Assets/Persons/Männer/Mensch_4_String_7_state_2.png" id="96_452r4"]
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
 script = ExtResource("1_2ehcw")
@@ -22,13 +107,46 @@ stringSpriteUI = Array[Texture2D]([ExtResource("2_kep4p"), ExtResource("2_kep4p"
 stringSprite = Array[Texture2D]([ExtResource("3_m22xh"), ExtResource("4_s5mik"), ExtResource("5_vm1dv"), ExtResource("6_jigyv")])
 humanSprite0 = Array[Texture2D]([ExtResource("7_8ua08"), ExtResource("8_wccde"), ExtResource("9_rni1e")])
 humanSprite1 = Array[Texture2D]([ExtResource("10_pu1wx"), ExtResource("10_pu1wx"), ExtResource("9_rni1e")])
-humanSprite2 = Array[Texture2D]([ExtResource("11_vho5h")])
-humanSprite3 = Array[Texture2D]([ExtResource("11_vho5h")])
-humanSprite4 = Array[Texture2D]([ExtResource("11_vho5h")])
-humanSprite5 = Array[Texture2D]([ExtResource("11_vho5h")])
-humanSprite6 = Array[Texture2D]([ExtResource("11_vho5h")])
-humanSprite7 = Array[Texture2D]([ExtResource("11_vho5h")])
-humanSprite8 = Array[Texture2D]([ExtResource("11_vho5h")])
+humanSprite2 = Array[Texture2D]([ExtResource("11_kvbou"), ExtResource("12_kbfxw"), ExtResource("13_p2g1k")])
+humanSprite3 = Array[Texture2D]([ExtResource("14_xdqyq"), ExtResource("15_usn2q"), ExtResource("13_p2g1k")])
+humanSprite4 = Array[Texture2D]([ExtResource("16_uqbn3"), ExtResource("17_qeqe1"), ExtResource("9_rni1e")])
+humanSprite5 = Array[Texture2D]([ExtResource("18_6lnon"), ExtResource("19_4o2bd"), ExtResource("13_p2g1k")])
+humanSprite6 = Array[Texture2D]([ExtResource("20_x4fxr"), ExtResource("21_2wet0"), ExtResource("13_p2g1k")])
+humanSprite7 = Array[Texture2D]([ExtResource("22_ji2yk"), ExtResource("23_6qd5u"), ExtResource("24_70a4c")])
+humanSprite8 = Array[Texture2D]([ExtResource("25_47at4"), ExtResource("26_5ab6t"), ExtResource("24_70a4c")])
+humanSprite9 = Array[Texture2D]([ExtResource("27_wu2je"), ExtResource("28_22afa"), ExtResource("24_70a4c")])
+humanSprite10 = Array[Texture2D]([ExtResource("29_owtqw"), ExtResource("30_grar6"), ExtResource("24_70a4c")])
+humanSprite11 = Array[Texture2D]([ExtResource("31_g0pup"), ExtResource("32_5wu6n"), ExtResource("24_70a4c")])
+humanSprite12 = Array[Texture2D]([ExtResource("33_nnyp7"), ExtResource("34_a0r1l"), ExtResource("24_70a4c")])
+humanSprite13 = Array[Texture2D]([ExtResource("35_q6m03"), ExtResource("36_ipim1"), ExtResource("24_70a4c")])
+humanSprite14 = Array[Texture2D]([ExtResource("37_avmsa"), ExtResource("38_k60dy"), ExtResource("39_rgvwt")])
+humanSprite15 = Array[Texture2D]([ExtResource("40_wgcg6"), ExtResource("41_wwcvn"), ExtResource("40_wgcg6")])
+humanSprite16 = Array[Texture2D]([ExtResource("42_nk8ia"), ExtResource("43_xvdbs"), ExtResource("39_rgvwt")])
+humanSprite17 = Array[Texture2D]([ExtResource("44_uq7d0"), ExtResource("45_hhj8v"), ExtResource("39_rgvwt")])
+humanSprite18 = Array[Texture2D]([ExtResource("46_natwb"), ExtResource("47_4g2nc"), ExtResource("39_rgvwt")])
+humanSprite19 = Array[Texture2D]([ExtResource("48_xsylr"), ExtResource("49_wtwqs"), ExtResource("39_rgvwt")])
+humanSprite20 = Array[Texture2D]([ExtResource("50_lkmnk"), ExtResource("51_jlr5h"), ExtResource("39_rgvwt")])
+humanSprite21 = Array[Texture2D]([ExtResource("52_ni4n0"), ExtResource("53_xwafv"), ExtResource("54_l7ydr")])
+humanSprite22 = Array[Texture2D]([ExtResource("55_6m3bm"), ExtResource("56_ke0mo"), ExtResource("54_l7ydr")])
+humanSprite23 = Array[Texture2D]([ExtResource("57_a6lom"), ExtResource("58_6v67f"), ExtResource("54_l7ydr")])
+humanSprite24 = Array[Texture2D]([ExtResource("59_68hsq"), ExtResource("60_bagnf"), ExtResource("54_l7ydr")])
+humanSprite25 = Array[Texture2D]([ExtResource("61_txoub"), ExtResource("62_6aqf3"), ExtResource("54_l7ydr")])
+humanSprite26 = Array[Texture2D]([ExtResource("63_ekbgs"), ExtResource("64_qt4ec"), ExtResource("54_l7ydr")])
+humanSprite27 = Array[Texture2D]([ExtResource("65_c4w2x"), ExtResource("66_v3tmw"), ExtResource("54_l7ydr")])
+humanSprite28 = Array[Texture2D]([ExtResource("67_gonfo"), ExtResource("68_4egja"), ExtResource("69_wqa33")])
+humanSprite29 = Array[Texture2D]([ExtResource("70_7x25k"), ExtResource("71_nlg3h"), ExtResource("69_wqa33")])
+humanSprite30 = Array[Texture2D]([ExtResource("72_agc3e"), ExtResource("73_a806v"), ExtResource("69_wqa33")])
+humanSprite31 = Array[Texture2D]([ExtResource("74_lxdoy"), ExtResource("75_rhcao"), ExtResource("69_wqa33")])
+humanSprite32 = Array[Texture2D]([ExtResource("76_sptwi"), ExtResource("77_gstye"), ExtResource("69_wqa33")])
+humanSprite33 = Array[Texture2D]([ExtResource("78_pa3x3"), ExtResource("79_l8lvs"), ExtResource("69_wqa33")])
+humanSprite34 = Array[Texture2D]([ExtResource("80_tcurk"), ExtResource("81_5slbh"), ExtResource("69_wqa33")])
+humanSprite35 = Array[Texture2D]([ExtResource("82_cgnll"), ExtResource("83_a3dsb"), ExtResource("84_ilb4o")])
+humanSprite36 = Array[Texture2D]([ExtResource("85_gsjnr"), ExtResource("86_gfy2f"), ExtResource("84_ilb4o")])
+humanSprite37 = Array[Texture2D]([ExtResource("87_mpwu7"), ExtResource("88_hwk3c"), ExtResource("84_ilb4o")])
+humanSprite38 = Array[Texture2D]([ExtResource("89_ipdyy"), ExtResource("90_54320"), ExtResource("84_ilb4o")])
+humanSprite39 = Array[Texture2D]([ExtResource("91_kf26y"), ExtResource("92_co4jo"), ExtResource("84_ilb4o")])
+humanSprite40 = Array[Texture2D]([ExtResource("93_mo1e8"), ExtResource("94_uix0d"), ExtResource("84_ilb4o")])
+humanSprite41 = Array[Texture2D]([ExtResource("95_h8hdy"), ExtResource("96_452r4"), ExtResource("84_ilb4o")])
 HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
 stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/String2")]
 
@@ -95,14 +213,6 @@ offset_bottom = 388.0
 visible = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("15_kep4p")]
-
-[connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
-[connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
-[connection signal="button_up" from="Human3/TextureButton" to="." method="_on_texture_button_button_up" binds= [2]]
-[connection signal="button_up" from="Human4/TextureButton" to="." method="_on_texture_button_button_up" binds= [3]]
-[connection signal="button_up" from="Human5/TextureButton" to="." method="_on_texture_button_button_up" binds= [4]]
-[connection signal="button_up" from="Human6/TextureButton" to="." method="_on_texture_button_button_up" binds= [5]]
-[connection signal="button_up" from="Human7/TextureButton" to="." method="_on_texture_button_button_up" binds= [6]]
 
 [editable path="Human"]
 [editable path="Human2"]
