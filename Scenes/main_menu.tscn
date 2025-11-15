@@ -1,9 +1,52 @@
-[gd_scene load_steps=0 format=3 uid="uid://dcsb8an6m564v"]
+[gd_scene load_steps=4 format=3 uid="uid://dcsb8an6m564v"]
 
-[node name="MainMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://b2aj2u6w2pseo" path="res://Assets/ProtoypeFolder/111675360QM9_OF_F-4163753176.jpg" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://yfib1p1sadqd" path="res://Assets/ProtoypeFolder/man-avatar-clipart-illustration-free-png-2353026389.png" id="3_1ehe0"]
+
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
+script = ExtResource("1_48xlc")
+stringSprite = Array[Texture2D]([ExtResource("2_1ehe0"), ExtResource("2_1ehe0"), ExtResource("2_1ehe0"), ExtResource("2_1ehe0"), ExtResource("2_1ehe0"), ExtResource("2_1ehe0"), ExtResource("2_1ehe0"), ExtResource("2_1ehe0"), ExtResource("2_1ehe0")])
+humanSprite = Array[Texture2D]([ExtResource("3_1ehe0"), ExtResource("3_1ehe0"), ExtResource("3_1ehe0"), ExtResource("3_1ehe0")])
+HumanSpawnPoints = [NodePath("HumanSpawner"), NodePath("HumanSpawner2"), NodePath("HumanSpawner3"), NodePath("HumanSpawner4"), NodePath("HumanSpawner5"), NodePath("HumanSpawner6"), NodePath("HumanSpawner7")]
+stringPoints = [NodePath("Node2D/Basket/String1"), NodePath("Node2D/Slingshot/String2")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 371.0
+offset_top = 86.0
+offset_right = 462.0
+offset_bottom = 198.0
+text = "Ass 1"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Slingshot" type="Sprite2D" parent="Node2D"]
+position = Vector2(99, 76)
+
+[node name="String2" type="Sprite2D" parent="Node2D/Slingshot"]
+
+[node name="Basket" type="Sprite2D" parent="Node2D"]
+
+[node name="String1" type="Sprite2D" parent="Node2D/Basket"]
+position = Vector2(99, 76)
+
+[node name="HumanSpawner" type="Sprite2D" parent="."]
+position = Vector2(242, 334)
+
+[node name="HumanSpawner2" type="Sprite2D" parent="."]
+position = Vector2(425, 252)
+
+[node name="HumanSpawner3" type="Sprite2D" parent="."]
+position = Vector2(729, 214)
+
+[node name="HumanSpawner4" type="Sprite2D" parent="."]
+position = Vector2(747, 107)
+
+[node name="HumanSpawner5" type="Sprite2D" parent="."]
+position = Vector2(493, 334)
+
+[node name="HumanSpawner6" type="Sprite2D" parent="."]
+position = Vector2(63, 365)
+
+[node name="HumanSpawner7" type="Sprite2D" parent="."]
+position = Vector2(851, 426)
