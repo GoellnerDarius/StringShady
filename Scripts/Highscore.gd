@@ -1,7 +1,6 @@
 extends Node
 @export var container: VBoxContainer
 @export var HighScorePath :String="user://highscores.json"
-@export var player_score: int = 0
 
 var name_input: LineEdit
 var score_saved: bool = false
@@ -12,7 +11,7 @@ func _ready() -> void:
 		return
 
 	var highscores = Deserialize()
-	var player_position = find_player_position(highscores, player_score)
+	var player_position = find_player_position(highscores, Globals.score)
 	var current_position = 0
 	var display_number = 1
 
@@ -59,7 +58,7 @@ func add_name_input(position: int) -> void:
 	name_input.text_submitted.connect(_on_name_submitted)
 
 	var score_label = Label.new()
-	score_label.text = ": " + str(player_score)
+	score_label.text = ": " + str(Globals.score)
 
 	input_container.add_child(position_label)
 	input_container.add_child(name_input)
@@ -81,7 +80,7 @@ func _on_name_submitted(player_name: String) -> void:
 	if player_name.strip_edges() == "":
 		return
 
-	AddHighscore(player_name, player_score)
+	AddHighscore(player_name, Globals.score)
 	score_saved = true
 
 	# Refresh the display
