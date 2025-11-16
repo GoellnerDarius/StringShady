@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://qk47wg0douts" path="res://Assets/Strings/String_3.png" id="5_x6ft1"]
 [ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="6_8v7by"]
 [ext_resource type="Texture2D" uid="uid://dirbkunlntm4g" path="res://Assets/Strings/assets_sa_1744/06_tanga_5.png" id="6_0212m"]
-[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="6_btda1"]
+[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="6_btda1"]
 [ext_resource type="Texture2D" uid="uid://btw0e8wg8yym0" path="res://Assets/Strings/String_4.png" id="6_p51s7"]
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="7_8v7by"]
 [ext_resource type="Texture2D" uid="uid://l1sfbiyjn7mu" path="res://Assets/Strings/String_5.png" id="7_fbmvr"]
@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://o0jblvxbprf8" path="res://Assets/Persons/Mensch_1_String_3_state_1.png" id="22_0jj1n"]
 [ext_resource type="Texture2D" uid="uid://b400kjmkeah2x" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_7.png" id="22_xq7md"]
 [ext_resource type="Texture2D" uid="uid://cttjm78iwoyls" path="res://Assets/Persons/Mensch_1_String_3_state_2.png" id="23_wl6rx"]
-[ext_resource type="PackedScene" uid="uid://b1he6bolg5ony" path="res://Scenes/Ui.tscn" id="24_0j4h4"]
+[ext_resource type="PackedScene" uid="uid://b14egvicj2e4j" path="res://Scenes/Ui.tscn" id="24_0j4h4"]
 [ext_resource type="Texture2D" uid="uid://bobbveivo3u7b" path="res://Assets/Persons/Mensch_1_String_4_state_1.png" id="24_vwd8i"]
 [ext_resource type="Texture2D" uid="uid://cctqerfp5k1yj" path="res://Assets/Persons/Mensch_1_String_4_state_2.png" id="25_u02wx"]
 [ext_resource type="Texture2D" uid="uid://dj6hlf4lhbcrt" path="res://Assets/Persons/Mensch_1_String_7_state_1.png" id="26_r6tmd"]
@@ -195,7 +195,7 @@ _data = {
 &"String": SubResource("Animation_0jj1n")
 }
 
-[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints")]
+[node name="TestLevel" type="Node2D" node_paths=PackedStringArray("HumanSpawnPoints", "stringPoints", "life1", "life2", "life3")]
 script = ExtResource("1_iti4p")
 stringSpriteUI = Array[Texture2D]([ExtResource("3_xq3o0"), ExtResource("3_y42of"), ExtResource("4_0j4h4"), ExtResource("5_v608p"), ExtResource("6_0212m"), ExtResource("7_xgl4d"), ExtResource("8_i3ufj")])
 stringSprite = Array[Texture2D]([ExtResource("3_so54a"), ExtResource("4_sw8nc"), ExtResource("5_x6ft1"), ExtResource("6_p51s7"), ExtResource("7_fbmvr"), ExtResource("8_7alf0"), ExtResource("9_260qw"), ExtResource("16_e0o23"), ExtResource("17_u3pbk"), ExtResource("18_wfpcm"), ExtResource("19_nu7l5"), ExtResource("20_o3woh"), ExtResource("21_1w3du"), ExtResource("22_xq7md")])
@@ -250,6 +250,9 @@ humanSprite47 = Array[Texture2D]([ExtResource("121_eg5bb"), ExtResource("122_bns
 humanSprite48 = Array[Texture2D]([ExtResource("123_0smal"), ExtResource("124_r17hk"), ExtResource("112_510xu")])
 HumanSpawnPoints = [NodePath("CanvasLayer/Control/Human"), NodePath("CanvasLayer/Control/Human2"), NodePath("CanvasLayer/Control/Human3"), NodePath("CanvasLayer/Control/Human4"), NodePath("CanvasLayer/Control/Human5"), NodePath("CanvasLayer/Control/Human6"), NodePath("CanvasLayer/Control/Human7")]
 stringPoints = [NodePath("CanvasLayer/Control/TextureRect3/TextureRect"), NodePath("CanvasLayer/Control/TextureRect2/String3")]
+life1 = NodePath("CanvasLayer/Control/Lifes/Life1")
+life2 = NodePath("CanvasLayer/Control/Lifes/Life2")
+life3 = NodePath("CanvasLayer/Control/Lifes/Life3")
 
 [node name="Node2D" type="Node2D" parent="."]
 

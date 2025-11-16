@@ -66,6 +66,10 @@ humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,hu
 ,humanSprite29,humanSprite30,humanSprite31,humanSprite32,humanSprite33,humanSprite34,humanSprite35,humanSprite36,humanSprite37
 ,humanSprite38,humanSprite39,humanSprite40,humanSprite41,humanSprite42,humanSprite43,humanSprite44,humanSprite45,humanSprite46,humanSprite47
 ] 
+@export var life1: TextureRect
+@export var life2: TextureRect
+@export var life3: TextureRect
+
 var currentUnderware:int
 var nextUnderWare:int
 var underwareHuman_map : Array[int]
@@ -83,10 +87,9 @@ var human_initial_times: Array[float]
 var human_brown_overlays: Array[TextureRect]
 var human_burnt_overlays: Array[TextureRect]
 
-
 func _ready():
 	Globals.score=0
-	Globals.lifes=30
+	Globals.lifes=3
 	StartWave()
 
 func _process(delta: float) -> void:
@@ -267,6 +270,10 @@ func _on_texture_button_button_up(extra_arg_0):
 		addUnderware(currentUnderware, extra_arg_0)
 	else:
 		Globals.lifes-=1
+		if Globals.lifes==2:
+			life3.hide()
+		if Globals.lifes==1:
+			life2.hide()
 		print("wrong")
 		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(4)
 		spawnpoint.emitting = true
@@ -304,7 +311,10 @@ func _on_texture_button_button_up(extra_arg_0):
 
 func _on_human_timeout(human_index: int):
 	Globals.lifes -= 1
-
+	if Globals.lifes==2:
+		life3.hide()
+	if Globals.lifes==1:
+		life2.hide()
 	if Globals.lifes <= 0:
 		get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
 		return

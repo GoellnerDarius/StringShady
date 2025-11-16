@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1he6bolg5ony"]
+[gd_scene load_steps=13 format=3 uid="uid://b14egvicj2e4j"]
 
 [ext_resource type="Texture2D" uid="uid://bfn6oow2vt77m" path="res://Assets/UI/00_Whiteboard.png" id="1_jft1q"]
 [ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/UI/01_Slingshot_unloaded.png" id="2_nbgms"]
 [ext_resource type="Texture2D" uid="uid://bsq84hg63sc0l" path="res://Assets/Strings/05_thermometer_epmty.png" id="3_q7cv7"]
 [ext_resource type="Texture2D" uid="uid://dosfemsj7c6rp" path="res://Assets/UI/05_thermometer_epmty.png" id="4_qhojq"]
-[ext_resource type="PackedScene" path="res://Scenes/Timer.tscn" id="5_aujua"]
+[ext_resource type="PackedScene" uid="uid://bx05c60f5ojlk" path="res://Scenes/Timer.tscn" id="5_aujua"]
 [ext_resource type="Texture2D" uid="uid://dxkrg3xw0e4jd" path="res://Assets/Strings/04_thermometer_fullcolor.png" id="6_qhojq"]
 [ext_resource type="Texture2D" uid="uid://v5lwugnls2un" path="res://Assets/UI/02_basket.png" id="7_q7cv7"]
 [ext_resource type="Texture2D" uid="uid://dhr648k40uqy7" path="res://Assets/UI/25_WS_JAM_Background.png" id="8_qhojq"]
+[ext_resource type="Texture2D" uid="uid://bymft6ehvpfno" path="res://Assets/lifes/07_life1.png" id="9_gu7dj"]
+[ext_resource type="Texture2D" uid="uid://urh5n4ha4bkq" path="res://Assets/lifes/07_life2.png" id="10_fc86d"]
+[ext_resource type="Texture2D" uid="uid://cltf04ogsyfdd" path="res://Assets/lifes/07_life3.png" id="11_n6c6w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vm1dv"]
 
@@ -78,6 +81,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.05
 
 [node name="Control3" type="Control" parent="Control/VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -131,3 +135,37 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_q7cv7")
 expand_mode = 1
+
+[node name="Lifes" type="Control" parent="Control"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Life1" type="TextureRect" parent="Control/Lifes"]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+scale = Vector2(0.47, 0.47)
+mouse_filter = 2
+texture = ExtResource("9_gu7dj")
+
+[node name="Life2" type="TextureRect" parent="Control/Lifes"]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+scale = Vector2(0.47, 0.47)
+mouse_filter = 2
+texture = ExtResource("10_fc86d")
+
+[node name="Life3" type="TextureRect" parent="Control/Lifes"]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+scale = Vector2(0.47, 0.47)
+mouse_filter = 2
+texture = ExtResource("11_n6c6w")
