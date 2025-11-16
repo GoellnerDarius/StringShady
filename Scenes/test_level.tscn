@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://qk47wg0douts" path="res://Assets/Strings/String_3.png" id="5_x6ft1"]
 [ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="6_8v7by"]
 [ext_resource type="Texture2D" uid="uid://dirbkunlntm4g" path="res://Assets/Strings/assets_sa_1744/06_tanga_5.png" id="6_0212m"]
-[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="6_btda1"]
+[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="6_btda1"]
 [ext_resource type="Texture2D" uid="uid://btw0e8wg8yym0" path="res://Assets/Strings/String_4.png" id="6_p51s7"]
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="7_8v7by"]
 [ext_resource type="Texture2D" uid="uid://l1sfbiyjn7mu" path="res://Assets/Strings/String_5.png" id="7_fbmvr"]
@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://o0jblvxbprf8" path="res://Assets/Persons/Mensch_1_String_3_state_1.png" id="22_0jj1n"]
 [ext_resource type="Texture2D" uid="uid://b400kjmkeah2x" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_7.png" id="22_xq7md"]
 [ext_resource type="Texture2D" uid="uid://cttjm78iwoyls" path="res://Assets/Persons/Mensch_1_String_3_state_2.png" id="23_wl6rx"]
-[ext_resource type="PackedScene" uid="uid://b14egvicj2e4j" path="res://Scenes/Ui.tscn" id="24_0j4h4"]
+[ext_resource type="PackedScene" uid="uid://b1he6bolg5ony" path="res://Scenes/Ui.tscn" id="24_0j4h4"]
 [ext_resource type="Texture2D" uid="uid://bobbveivo3u7b" path="res://Assets/Persons/Mensch_1_String_4_state_1.png" id="24_vwd8i"]
 [ext_resource type="Texture2D" uid="uid://cctqerfp5k1yj" path="res://Assets/Persons/Mensch_1_String_4_state_2.png" id="25_u02wx"]
 [ext_resource type="Texture2D" uid="uid://dj6hlf4lhbcrt" path="res://Assets/Persons/Mensch_1_String_7_state_1.png" id="26_r6tmd"]
@@ -132,7 +132,7 @@
 [ext_resource type="Texture2D" uid="uid://dtljgvh4d4h7w" path="res://Assets/Persons/Patrick/Patrick_String_6_State_2.png" id="122_bnsw7"]
 [ext_resource type="Texture2D" uid="uid://dynukxyxcijed" path="res://Assets/Persons/Patrick/Patrick_String_7_State_1.png" id="123_0smal"]
 [ext_resource type="Texture2D" uid="uid://dsncbquhbdc6" path="res://Assets/Persons/Patrick/Patrick_String_7_State_2.png" id="124_r17hk"]
-[ext_resource type="PackedScene" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
+[ext_resource type="PackedScene" uid="uid://cus74pp10h4va" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
 
 [sub_resource type="Animation" id="Animation_wl6rx"]
 length = 0.001
@@ -357,11 +357,6 @@ offset_top = 459.75
 offset_right = 1060.75
 offset_bottom = 499.75
 rotation = -0.15533431
-
-[node name="Lifes" parent="CanvasLayer/Control" index="13"]
-anchors_preset = 12
-anchor_top = 1.0
-grow_vertical = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
