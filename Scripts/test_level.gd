@@ -1,6 +1,6 @@
 extends Node2D
 
-const HUMAN_SCALE = Vector2(0.25, 0.25)
+const HUMAN_SCALE = Vector2(0.4, 0.4)
 
 @export var stringSpriteUI : Array[Texture2D]
 @export var stringSprite : Array[Texture2D]
@@ -181,15 +181,15 @@ func SpawnUnderWare(UnderWare):
 		RoundWon()
 		return
 	if stringPoints[0].texture == null:
-		nextUnderWare = FindAnUnderWare()
-		stringSprite[nextUnderWare]
-		underwareHuman_map[underwareHuman_map.find(nextUnderWare)] = -1
+		nextUnderWare = UnderWare
+		stringSprite[UnderWare]
+		underwareHuman_map[underwareHuman_map.find(UnderWare)] = -1
+		UnderWare = FindAnUnderWare()
 	currentUnderware = nextUnderWare
 	stringPoints[1].texture = stringSpriteUI[currentUnderware]
 	stringPoints[0].texture = stringSpriteUI[UnderWare]
 	nextUnderWare = UnderWare
 	underwareHuman_map[underwareHuman_map.find(UnderWare)] = -1
-
 	print(underwareHuman_map)
 func RoundWon():
 	print("you won the Round")
@@ -254,13 +254,17 @@ func addUnderware(Index, humanIndex):
 	if humanIndex < human_timers.size():
 		human_timers[humanIndex].stop()
 
+func ChangeTheWrongString(WrongSpace,underWareUsed):
+	#underwareHuman_map[underwareHuman_map.find(underWareUsed)] = WrongSpace
+	print(underwareHuman_map)
+
 func _on_texture_button_button_up(extra_arg_0):
-	print("Human"+ str(extra_arg_0) + "CurrentString"+ str(underwareHuman_map[extra_arg_0]))
 	if (underwareHumanConst[extra_arg_0] == currentUnderware):
 		Globals.score+=10
 		print("correct")
 	else:
 		Globals.lifes-=1
+		ChangeTheWrongString(underwareHumanConst[extra_arg_0],currentUnderware)
 		print("wrong")
 		if Globals.lifes<=0:
 			get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
@@ -277,7 +281,6 @@ func _on_texture_button_button_up(extra_arg_0):
 		RemoveUnderWare()
 
 func _on_human_timeout(human_index: int):
-	print("Human " + str(human_index) + " ran out of time! Lost a life.")
 	Globals.lifes -= 1
 
 	if Globals.lifes <= 0:
