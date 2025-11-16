@@ -54,6 +54,8 @@ func add_name_input(position: int) -> void:
 	position_label.text = str(position) + ". "
 
 	name_input = LineEdit.new()
+	name_input.add_theme_font_override("font", font)
+	name_input.max_length = 20
 	name_input.placeholder_text = "Enter your name"
 	name_input.custom_minimum_size = Vector2(200, 0)
 	name_input.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
@@ -62,7 +64,7 @@ func add_name_input(position: int) -> void:
 
 	var score_label = Label.new()
 	score_label.text = ": " + str(Globals.score)
-
+	score_label.add_theme_font_override("font", font)
 	input_container.add_child(position_label)
 	input_container.add_child(name_input)
 	input_container.add_child(score_label)
@@ -97,6 +99,7 @@ func _on_name_submitted(player_name: String) -> void:
 			break
 		var lable :Label
 		lable=Label.new()
+		lable.add_theme_font_override("font", font)
 		lable.text=str(display_number) + ". " + str(highscore)+": "+str(highscores[highscore])
 		lable.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		lable.size_flags_horizontal = Control.SIZE_EXPAND_FILL

@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://yuudxxfwygmp"]
+
+[ext_resource type="Script" uid="uid://dw0cdqga1fbtd" path="res://Scripts/Highscore.gd" id="1_cg07q"]
+[ext_resource type="Texture2D" uid="uid://dmxi0m8auwad4" path="res://Assets/UI/Scoreboard.png" id="2_3y5tu"]
+[ext_resource type="Texture2D" uid="uid://dhplfvxgxyv7p" path="res://Assets/UI/Scoreboard_restart_normal.png" id="3_e2v44"]
+[ext_resource type="Script" uid="uid://cfo0nga5xxdnu" path="res://Scripts/StartButton.gd" id="3_qcekt"]
+[ext_resource type="Texture2D" uid="uid://c2t3ixr6yea2y" path="res://Assets/UI/Scoreboard_restart_hower.png" id="4_gib10"]
+[ext_resource type="Script" uid="uid://c3gkfylj21ueu" path="res://Scripts/ExitButton.gd" id="4_owhkw"]
+[ext_resource type="Texture2D" uid="uid://c7v3qyq1sxgeo" path="res://Assets/UI/Scoreboard_quit_normal.png" id="6_4wuqp"]
+[ext_resource type="Texture2D" uid="uid://jwousw1rrk33" path="res://Assets/UI/Scoreboard_quit_hower.png" id="7_1ryyy"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_3y5tu")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.47
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Spawnname" type="VBoxContainer" parent="Control/HBoxContainer/VBoxContainer2" node_paths=PackedStringArray("container")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_cg07q")
+container = NodePath(".")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.13
+
+[node name="Control2" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.36
+
+[node name="Restart" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -666.0
+offset_top = -306.0
+offset_right = -234.0
+offset_bottom = -155.25
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_e2v44")
+texture_hover = ExtResource("4_gib10")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_qcekt")
+
+[node name="Quit" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -608.0
+offset_top = -181.0
+offset_right = -322.25
+offset_bottom = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_4wuqp")
+texture_hover = ExtResource("7_1ryyy")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_owhkw")
+
+[connection signal="button_down" from="Control/Restart" to="Control/Restart" method="_on_button_down"]
+[connection signal="button_down" from="Control/Quit" to="Control/Quit" method="_on_button_down"]
