@@ -18,3 +18,4 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 Globals="*res://Scripts/Globals.gd"
+Musicplayer="*res://Scenes/Musicplayer.tscn"

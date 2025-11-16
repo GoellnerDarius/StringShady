@@ -46,15 +46,26 @@ const HUMAN_SCALE = Vector2(0.25, 0.25)
 @export var humanSprite39 : Array[Texture2D]
 @export var humanSprite40 : Array[Texture2D]
 @export var humanSprite41 : Array[Texture2D]
+@export var humanSprite42 : Array[Texture2D] 
+@export var humanSprite43 : Array[Texture2D] 
+@export var humanSprite44 : Array[Texture2D] 
+@export var humanSprite45 : Array[Texture2D] 
+@export var humanSprite46 : Array[Texture2D]
+@export var humanSprite47 : Array[Texture2D]
+@export var humanSprite48 : Array[Texture2D]
 
 @export var HumanSpawnPoints: Array[Control]
 @export var stringPoints: Array[Sprite2D]
 
 @export var stringButton:Array[Control]
 @onready var animationPlayer:AnimationPlayer = $AnimationPlayer
-@onready var humanSprite = [humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8
-,humanSprite9,humanSprite10,humanSprite11,humanSprite12,humanSprite13,humanSprite14,humanSprite15,humanSprite16,humanSprite17,humanSprite18,humanSprite19
-,humanSprite20,humanSprite21,humanSprite22,humanSprite23,humanSprite24,humanSprite25,humanSprite26,humanSprite27] 
+@onready var humanSprite = [
+humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8
+,humanSprite9,humanSprite10,humanSprite11,humanSprite12,humanSprite13,humanSprite14,humanSprite15,humanSprite16,humanSprite17,humanSprite18
+,humanSprite19,humanSprite20,humanSprite21,humanSprite22,humanSprite23,humanSprite24,humanSprite25,humanSprite26,humanSprite27,humanSprite28
+,humanSprite29,humanSprite30,humanSprite31,humanSprite32,humanSprite33,humanSprite34,humanSprite34,humanSprite35,humanSprite36,humanSprite37
+,humanSprite38,humanSprite39,humanSprite40,humanSprite41,humanSprite42,humanSprite43,humanSprite44,humanSprite45,humanSprite46,humanSprite47
+] 
 var currentUnderware:int
 var nextUnderWare:int
 var underwareHuman_map : Array[int]
@@ -115,7 +126,7 @@ func Spawnhumans(Amount):
 		HumanSpawnPoints[n].scale = HUMAN_SCALE
 		underwareHuman_map.append(randomnumber % 7)
 		underwareHumanConst.append(randomnumber % 7)
-		if randomnumber > 21:
+		if randomnumber > 20:
 			ManOrWoman.append(true)
 		else:
 			ManOrWoman.append(false)
@@ -228,6 +239,10 @@ func RemoveUnderWare():
 		RoundWon()
 	else:
 		stringPoints[0].texture = null
+		currentUnderware = nextUnderWare
+		stringPoints[1].texture = stringSpriteUI[currentUnderware]
+		
+		
 func addUnderware(Index, humanIndex):
 	var child: TextureRect =  HumanSpawnPoints[humanIndex].get_child(1)
 	if ManOrWoman[humanIndex]:
@@ -281,7 +296,3 @@ func _on_human_timeout(human_index: int):
 			endamount +=1
 	if endamount == underwareHuman_map.size():
 		RoundWon()
-
-
-func _on_texture_button_button_down(extra_arg_0: int) -> void:
-	pass # Replace with function body.

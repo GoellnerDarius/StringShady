@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xqxtt8xosfe0"]
+
+[ext_resource type="AudioStream" uid="uid://bb1wfvpab6twq" path="res://Assets/Sounds/StringShadySoundtrack_23lufs_24bit_48kHz_125bpm_loopable.wav" id="1_w8ycp"]
+
+[node name="Node" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_w8ycp")
+autoplay = true
