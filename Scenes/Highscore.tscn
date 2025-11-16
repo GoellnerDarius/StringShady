@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://yuudxxfwygmp"]
+
+[ext_resource type="Script" uid="uid://dw0cdqga1fbtd" path="res://Scripts/Highscore.gd" id="1_cg07q"]
+[ext_resource type="Texture2D" uid="uid://dmxi0m8auwad4" path="res://Assets/UI/Scoreboard.png" id="2_3y5tu"]
+[ext_resource type="Script" uid="uid://cfo0nga5xxdnu" path="res://Scripts/StartButton.gd" id="3_qcekt"]
+[ext_resource type="Script" uid="uid://c3gkfylj21ueu" path="res://Scripts/ExitButton.gd" id="4_owhkw"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_3y5tu")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.47
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Spawnname" type="VBoxContainer" parent="Control/HBoxContainer/VBoxContainer2" node_paths=PackedStringArray("container")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_cg07q")
+container = NodePath(".")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Start" type="TextureButton" parent="Control/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_qcekt")
+
+[node name="Quit" type="TextureButton" parent="Control/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_owhkw")
+
+[node name="Control2" type="Control" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.13
+
+[node name="Control2" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.36
+
+[connection signal="button_down" from="Control/HBoxContainer/VBoxContainer2/HBoxContainer/Start" to="Control/HBoxContainer/VBoxContainer2/HBoxContainer/Start" method="_on_button_down"]
+[connection signal="button_down" from="Control/HBoxContainer/VBoxContainer2/HBoxContainer/Quit" to="Control/HBoxContainer/VBoxContainer2/HBoxContainer/Quit" method="_on_button_down"]
