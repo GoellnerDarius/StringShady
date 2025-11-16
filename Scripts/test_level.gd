@@ -86,7 +86,7 @@ var human_burnt_overlays: Array[TextureRect]
 
 func _ready():
 	Globals.score=0
-	Globals.lifes=3
+	Globals.lifes=30
 	StartWave()
 
 func _process(delta: float) -> void:
@@ -264,17 +264,35 @@ func _on_texture_button_button_up(extra_arg_0):
 		print("correct")
 		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(5)
 		spawnpoint.emitting = true
+		addUnderware(currentUnderware, extra_arg_0)
 	else:
 		Globals.lifes-=1
-		ChangeTheWrongString(underwareHumanConst[extra_arg_0],currentUnderware)
 		print("wrong")
 		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(4)
 		spawnpoint.emitting = true
 		if Globals.lifes<=0:
 			get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
 			return
+
+		# Wrong selection: place shot underwear on wrong human
+		addUnderware(currentUnderware, extra_arg_0)
+
+		# Put the shot underwear type back in queue (shuffle to back)
+		# Find another human who needs this type, or just add it back
+		var shot_type = currentUnderware
+		var wrong_human_needed_type = underwareHumanConst[extra_arg_0]
+
+		# Mark the wrong human as served (they got underwear, even if wrong)
+		underwareHuman_map[extra_arg_0] = -1
+
+		# Re-add the shot type back to the map if any human originally needed it
+		# This puts it back in circulation
+		for i in range(underwareHuman_map.size()):
+			if underwareHumanConst[i] == shot_type and underwareHuman_map[i] == -1 and i != extra_arg_0:
+				underwareHuman_map[i] = shot_type
+				break
+
 	animationPlayer.play("String")
-	addUnderware(currentUnderware, extra_arg_0)
 	var endamount:int = 0
 	for n in underwareHuman_map:
 		if n == -1:
