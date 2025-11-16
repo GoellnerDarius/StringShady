@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=136 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://bgplbebg3kt2g" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://d3a3oa6vbp8lu" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_2.png" id="17_u3pbk"]
 [ext_resource type="Texture2D" uid="uid://doq2nfw47ws3x" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_3.png" id="18_wfpcm"]
 [ext_resource type="Texture2D" uid="uid://b2ks06v48m0qi" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_4.png" id="19_nu7l5"]
-[ext_resource type="Texture2D" uid="uid://di4fuk6g1s74l" path="res://Assets/Persons/Mensch_1_String_2_state_2.png" id="20_maxbh"]
 [ext_resource type="Texture2D" uid="uid://cjavddmo2tgve" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_5.png" id="20_o3woh"]
 [ext_resource type="Texture2D" uid="uid://dbpsmvgng0hnk" path="res://Assets/Persons/Männer/Strings_Männer/String_Mann_6.png" id="21_1w3du"]
 [ext_resource type="Texture2D" uid="uid://fpsrj6vawm6k" path="res://Assets/Persons/Mensch_1_String_1_state_3.png" id="21_j3qi3"]
@@ -42,10 +41,14 @@
 [ext_resource type="Texture2D" uid="uid://cqrvntn1ju2hd" path="res://Assets/Persons/Mensch_5_String_1_state_2.png" id="29_u3pbk"]
 [ext_resource type="Texture2D" uid="uid://do85ekxjplx82" path="res://Assets/Persons/Mensch_5_verbrutzelt.png" id="30_wfpcm"]
 [ext_resource type="Texture2D" uid="uid://bglsufe77oj46" path="res://Assets/Persons/Mensch_5_String_2_state_1.png" id="31_nu7l5"]
+[ext_resource type="Texture2D" uid="uid://bxq1jngb8dy4q" path="res://Assets/Persons/Mensch_1_String_5_state_1.png" id="32_fdrby"]
 [ext_resource type="Texture2D" uid="uid://bd7aevmqi1hgr" path="res://Assets/Persons/Mensch_5_String_2_state_2.png" id="32_o3woh"]
 [ext_resource type="Texture2D" uid="uid://ltw4a5g4moov" path="res://Assets/Persons/Mensch_5_String_3_state_1.png" id="33_1w3du"]
+[ext_resource type="Texture2D" uid="uid://dqv5m01fbgc5a" path="res://Assets/Persons/Mensch_1_String_5_state_2.png" id="33_wp8lo"]
+[ext_resource type="Texture2D" uid="uid://uecwa3sko7ae" path="res://Assets/Persons/Mensch_1_String_6_state_1.png" id="34_hit6r"]
 [ext_resource type="Texture2D" uid="uid://v2324bvln2qd" path="res://Assets/Persons/Mensch_5_String_3_state_2.png" id="34_xq7md"]
 [ext_resource type="Texture2D" uid="uid://c8yy4m1xti1is" path="res://Assets/Persons/Mensch_5_String_4_state_1.png" id="35_21ega"]
+[ext_resource type="Texture2D" uid="uid://cctvkk880gowl" path="res://Assets/Persons/Mensch_1_String_6_state_2.png" id="35_w0l55"]
 [ext_resource type="Texture2D" uid="uid://c8x8difw37y08" path="res://Assets/Persons/Mensch_5_String_4_state_2.png" id="36_vv0j5"]
 [ext_resource type="Texture2D" uid="uid://gn8wdvcdlke" path="res://Assets/Persons/Mensch_5_String_5_state_1.png" id="37_0qdyi"]
 [ext_resource type="Texture2D" uid="uid://ciuboy31csn5p" path="res://Assets/Persons/Mensch_5_String_5_state_2.png" id="38_pc6wx"]
@@ -197,10 +200,10 @@ stringSpriteUI = Array[Texture2D]([ExtResource("3_xq3o0"), ExtResource("3_y42of"
 stringSprite = Array[Texture2D]([ExtResource("3_so54a"), ExtResource("4_sw8nc"), ExtResource("5_x6ft1"), ExtResource("6_p51s7"), ExtResource("7_fbmvr"), ExtResource("8_7alf0"), ExtResource("9_260qw"), ExtResource("16_e0o23"), ExtResource("17_u3pbk"), ExtResource("18_wfpcm"), ExtResource("19_nu7l5"), ExtResource("20_o3woh"), ExtResource("21_1w3du"), ExtResource("22_xq7md")])
 humanSprite0 = Array[Texture2D]([ExtResource("5_2yvf5"), ExtResource("5_akkqd"), ExtResource("6_8v7by")])
 humanSprite1 = Array[Texture2D]([ExtResource("7_8v7by"), ExtResource("7_8v7by"), ExtResource("6_8v7by")])
-humanSprite2 = Array[Texture2D]([ExtResource("7_8v7by"), ExtResource("20_maxbh"), ExtResource("21_j3qi3")])
-humanSprite3 = Array[Texture2D]([ExtResource("22_0jj1n"), ExtResource("23_wl6rx"), ExtResource("21_j3qi3")])
-humanSprite4 = Array[Texture2D]([ExtResource("22_0jj1n"), ExtResource("23_wl6rx"), ExtResource("21_j3qi3")])
-humanSprite5 = Array[Texture2D]([ExtResource("24_vwd8i"), ExtResource("25_u02wx"), ExtResource("21_j3qi3")])
+humanSprite2 = Array[Texture2D]([ExtResource("22_0jj1n"), ExtResource("23_wl6rx"), ExtResource("21_j3qi3")])
+humanSprite3 = Array[Texture2D]([ExtResource("24_vwd8i"), ExtResource("25_u02wx"), ExtResource("21_j3qi3")])
+humanSprite4 = Array[Texture2D]([ExtResource("32_fdrby"), ExtResource("33_wp8lo"), ExtResource("21_j3qi3")])
+humanSprite5 = Array[Texture2D]([ExtResource("34_hit6r"), ExtResource("35_w0l55"), ExtResource("21_j3qi3")])
 humanSprite6 = Array[Texture2D]([ExtResource("26_r6tmd"), ExtResource("27_11h0p"), ExtResource("21_j3qi3")])
 humanSprite7 = Array[Texture2D]([ExtResource("28_e0o23"), ExtResource("29_u3pbk"), ExtResource("30_wfpcm")])
 humanSprite8 = Array[Texture2D]([ExtResource("31_nu7l5"), ExtResource("32_o3woh"), ExtResource("30_wfpcm")])
@@ -242,7 +245,7 @@ humanSprite43 = Array[Texture2D]([ExtResource("113_fdrby"), ExtResource("114_wp8
 humanSprite44 = Array[Texture2D]([ExtResource("115_hit6r"), ExtResource("116_w0l55"), ExtResource("112_510xu")])
 humanSprite45 = Array[Texture2D]([ExtResource("117_wfck2"), ExtResource("118_khldq"), ExtResource("112_510xu")])
 humanSprite46 = Array[Texture2D]([ExtResource("119_8waar"), ExtResource("120_3cl76"), ExtResource("112_510xu")])
-humanSprite47 = Array[Texture2D]([ExtResource("121_eg5bb"), ExtResource("122_bnsw7")])
+humanSprite47 = Array[Texture2D]([ExtResource("121_eg5bb"), ExtResource("122_bnsw7"), ExtResource("112_510xu")])
 humanSprite48 = Array[Texture2D]([ExtResource("123_0smal"), ExtResource("124_r17hk"), ExtResource("112_510xu")])
 HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
 stringPoints = [NodePath("CanvasLayer/Control/TextureRect3/String1"), NodePath("CanvasLayer/Control/TextureRect2/String2")]

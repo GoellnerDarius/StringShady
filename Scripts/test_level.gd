@@ -63,7 +63,7 @@ const HUMAN_SCALE = Vector2(0.4, 0.4)
 humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8
 ,humanSprite9,humanSprite10,humanSprite11,humanSprite12,humanSprite13,humanSprite14,humanSprite15,humanSprite16,humanSprite17,humanSprite18
 ,humanSprite19,humanSprite20,humanSprite21,humanSprite22,humanSprite23,humanSprite24,humanSprite25,humanSprite26,humanSprite27,humanSprite28
-,humanSprite29,humanSprite30,humanSprite31,humanSprite32,humanSprite33,humanSprite34,humanSprite34,humanSprite35,humanSprite36,humanSprite37
+,humanSprite29,humanSprite30,humanSprite31,humanSprite32,humanSprite33,humanSprite34,humanSprite35,humanSprite36,humanSprite37
 ,humanSprite38,humanSprite39,humanSprite40,humanSprite41,humanSprite42,humanSprite43,humanSprite44,humanSprite45,humanSprite46,humanSprite47
 ] 
 var currentUnderware:int
