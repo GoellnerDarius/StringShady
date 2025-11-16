@@ -358,6 +358,11 @@ offset_right = 1060.75
 offset_bottom = 499.75
 rotation = -0.15533431
 
+[node name="Lifes" parent="CanvasLayer/Control" index="13"]
+anchors_preset = 12
+anchor_top = 1.0
+grow_vertical = 0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_vwd8i")
