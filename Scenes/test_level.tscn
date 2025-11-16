@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=140 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://bgplbebg3kt2g" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://qk47wg0douts" path="res://Assets/Strings/String_3.png" id="5_x6ft1"]
 [ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="6_8v7by"]
 [ext_resource type="Texture2D" uid="uid://dirbkunlntm4g" path="res://Assets/Strings/assets_sa_1744/06_tanga_5.png" id="6_0212m"]
-[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="6_btda1"]
+[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="6_btda1"]
 [ext_resource type="Texture2D" uid="uid://btw0e8wg8yym0" path="res://Assets/Strings/String_4.png" id="6_p51s7"]
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="7_8v7by"]
 [ext_resource type="Texture2D" uid="uid://l1sfbiyjn7mu" path="res://Assets/Strings/String_5.png" id="7_fbmvr"]
@@ -132,7 +132,10 @@
 [ext_resource type="Texture2D" uid="uid://dtljgvh4d4h7w" path="res://Assets/Persons/Patrick/Patrick_String_6_State_2.png" id="122_bnsw7"]
 [ext_resource type="Texture2D" uid="uid://dynukxyxcijed" path="res://Assets/Persons/Patrick/Patrick_String_7_State_1.png" id="123_0smal"]
 [ext_resource type="Texture2D" uid="uid://dsncbquhbdc6" path="res://Assets/Persons/Patrick/Patrick_String_7_State_2.png" id="124_r17hk"]
-[ext_resource type="PackedScene" uid="uid://cus74pp10h4va" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
+[ext_resource type="AudioStream" uid="uid://bslgncdpqkvk1" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch1.wav" id="128_wfck2"]
+[ext_resource type="AudioStream" uid="uid://rqljm6x1663u" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch2.wav" id="129_khldq"]
+[ext_resource type="AudioStream" uid="uid://bsfwicifxha4c" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch3.wav" id="130_8waar"]
+[ext_resource type="PackedScene" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
 
 [sub_resource type="Animation" id="Animation_wl6rx"]
 length = 0.001
@@ -253,6 +256,7 @@ stringPoints = [NodePath("CanvasLayer/Control/TextureRect3/TextureRect"), NodePa
 life1 = NodePath("CanvasLayer/Control/Lifes/Life1")
 life2 = NodePath("CanvasLayer/Control/Lifes/Life2")
 life3 = NodePath("CanvasLayer/Control/Lifes/Life3")
+slingshot_sounds = Array[AudioStream]([ExtResource("128_wfck2"), ExtResource("129_khldq"), ExtResource("130_8waar")])
 
 [node name="Node2D" type="Node2D" parent="."]
 

@@ -70,6 +70,9 @@ humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,hu
 @export var life2: TextureRect
 @export var life3: TextureRect
 
+@export var slingshot_sounds: Array[AudioStream]
+var audio_player: AudioStreamPlayer
+
 var currentUnderware:int
 var nextUnderWare:int
 var underwareHuman_map : Array[int]
@@ -90,6 +93,11 @@ var human_burnt_overlays: Array[TextureRect]
 func _ready():
 	Globals.score=0
 	Globals.lifes=3
+
+	# Create audio player for slingshot sounds
+	audio_player = AudioStreamPlayer.new()
+	add_child(audio_player)
+
 	StartWave()
 
 func _process(delta: float) -> void:
@@ -262,6 +270,12 @@ func ChangeTheWrongString(WrongSpace,underWareUsed):
 	print(underwareHuman_map)
 
 func _on_texture_button_button_up(extra_arg_0):
+	# Play random slingshot sound
+	if slingshot_sounds.size() > 0:
+		var random_sound = slingshot_sounds[randi() % slingshot_sounds.size()]
+		audio_player.stream = random_sound
+		audio_player.play()
+
 	if (underwareHumanConst[extra_arg_0] == currentUnderware):
 		Globals.score+=10
 		print("correct")
