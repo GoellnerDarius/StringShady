@@ -297,7 +297,7 @@ grow_horizontal = 0
 grow_vertical = 0
 rotation = 1.5707964
 
-[node name="Human" parent="CanvasLayer/Control" index="6" instance=ExtResource("3_eglq2")]
+[node name="Human" parent="CanvasLayer/Control" index="7" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 45.0
 offset_top = 465.0
@@ -305,7 +305,7 @@ offset_right = 85.0
 offset_bottom = 505.0
 rotation = -0.23387411
 
-[node name="Human2" parent="CanvasLayer/Control" index="7" instance=ExtResource("3_eglq2")]
+[node name="Human2" parent="CanvasLayer/Control" index="8" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 723.75
 offset_top = 212.25
@@ -313,7 +313,7 @@ offset_right = 763.75
 offset_bottom = 252.25
 rotation = -0.15707964
 
-[node name="Human3" parent="CanvasLayer/Control" index="8" instance=ExtResource("3_eglq2")]
+[node name="Human3" parent="CanvasLayer/Control" index="9" instance=ExtResource("3_eglq2")]
 layout_mode = 0
 offset_left = 1513.5
 offset_top = 412.5
@@ -321,7 +321,7 @@ offset_right = 1553.5
 offset_bottom = 452.5
 rotation = -0.31241393
 
-[node name="Human4" parent="CanvasLayer/Control" index="9" instance=ExtResource("3_eglq2")]
+[node name="Human4" parent="CanvasLayer/Control" index="10" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 542.25
 offset_top = 391.5
@@ -329,14 +329,14 @@ offset_right = 582.25
 offset_bottom = 431.5
 rotation = 0.15533431
 
-[node name="Human5" parent="CanvasLayer/Control" index="10" instance=ExtResource("3_eglq2")]
+[node name="Human5" parent="CanvasLayer/Control" index="11" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 303.0
 offset_top = 191.25
 offset_right = 343.0
 offset_bottom = 231.25
 
-[node name="Human6" parent="CanvasLayer/Control" index="11" instance=ExtResource("3_eglq2")]
+[node name="Human6" parent="CanvasLayer/Control" index="12" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 1389.75
 offset_top = 132.0
@@ -350,7 +350,7 @@ offset_top = 465.0
 offset_right = 576.0
 offset_bottom = 505.0
 
-[node name="Human7" parent="CanvasLayer/Control" index="12" instance=ExtResource("3_eglq2")]
+[node name="Human7" parent="CanvasLayer/Control" index="13" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 1020.75
 offset_top = 459.75

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1he6bolg5ony"]
+[gd_scene load_steps=23 format=3 uid="uid://b1he6bolg5ony"]
 
 [ext_resource type="Texture2D" uid="uid://bfn6oow2vt77m" path="res://Assets/UI/00_Whiteboard.png" id="1_jft1q"]
 [ext_resource type="Texture2D" uid="uid://rafvaky8uoio" path="res://Assets/UI/01_Slingshot_unloaded.png" id="2_nbgms"]
@@ -9,10 +9,55 @@
 [ext_resource type="Texture2D" uid="uid://v5lwugnls2un" path="res://Assets/UI/02_basket.png" id="7_q7cv7"]
 [ext_resource type="Texture2D" uid="uid://dhr648k40uqy7" path="res://Assets/UI/25_WS_JAM_Background.png" id="8_qhojq"]
 [ext_resource type="Texture2D" uid="uid://bymft6ehvpfno" path="res://Assets/lifes/07_life1.png" id="9_gu7dj"]
+[ext_resource type="Texture2D" uid="uid://d0fc7hhyh7dfj" path="res://Assets/Animation/Backgroundwaves_PNGs_1.png" id="9_njedf"]
 [ext_resource type="Texture2D" uid="uid://urh5n4ha4bkq" path="res://Assets/lifes/07_life2.png" id="10_fc86d"]
 [ext_resource type="Texture2D" uid="uid://cltf04ogsyfdd" path="res://Assets/lifes/07_life3.png" id="11_n6c6w"]
+[ext_resource type="Texture2D" uid="uid://db2feufgjjumy" path="res://Assets/Animation/Backgroundwaves_PNGs_2.png" id="13_01sbp"]
+[ext_resource type="Texture2D" uid="uid://cy1rr8trmttcl" path="res://Assets/Animation/Backgroundwaves_PNGs_3.png" id="14_o0u6e"]
+[ext_resource type="Texture2D" uid="uid://cegqwh73450ht" path="res://Assets/Animation/Backgroundwaves_PNGs_4.png" id="15_cjhav"]
+[ext_resource type="Texture2D" uid="uid://bfpv2c8fniis1" path="res://Assets/Animation/Backgroundwaves_PNGs_5.png" id="16_5e0td"]
+[ext_resource type="Texture2D" uid="uid://l67m1emsfhf2" path="res://Assets/Animation/Backgroundwaves_PNGs_7.png" id="18_2anqt"]
+[ext_resource type="Script" uid="uid://ccewdr5r4v7q8" path="res://Scripts/animation_player.gd" id="18_nw4vn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vm1dv"]
+
+[sub_resource type="Animation" id="Animation_nj6ko"]
+resource_name = "Idle"
+length = 3.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TextureRect4:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.3999999, 2.7, 2.9999998, 3.3000007),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_njedf"), ExtResource("13_01sbp"), ExtResource("14_o0u6e"), ExtResource("15_cjhav"), ExtResource("16_5e0td"), ExtResource("18_2anqt"), ExtResource("16_5e0td"), ExtResource("15_cjhav"), ExtResource("14_o0u6e"), ExtResource("13_01sbp"), ExtResource("9_njedf")]
+}
+
+[sub_resource type="Animation" id="Animation_q2re3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TextureRect4:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_njedf")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wn07k"]
+_data = {
+&"Idle": SubResource("Animation_nj6ko"),
+&"RESET": SubResource("Animation_q2re3")
+}
 
 [node name="CanvasLayer" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -138,6 +183,16 @@ grow_vertical = 2
 texture = ExtResource("7_q7cv7")
 expand_mode = 1
 
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_njedf")
+expand_mode = 1
+
 [node name="Lifes" type="Control" parent="Control"]
 z_as_relative = false
 layout_mode = 1
@@ -180,3 +235,9 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("11_n6c6w")
 expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wn07k")
+}
+script = ExtResource("18_nw4vn")
