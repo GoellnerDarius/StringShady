@@ -147,18 +147,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("4_btda1")]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/TextureRect2/String2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(560, 519)]
-}
 
 [sub_resource type="Animation" id="Animation_0jj1n"]
 resource_name = "String"
@@ -174,18 +162,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("107_j3qi3"), ExtResource("4_btda1")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/Control/TextureRect2/String2:position")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 0.36666667),
-"transitions": PackedFloat32Array(1, 1e-05),
-"update": 1,
-"values": [Vector2(560, 600), Vector2(560, 519.555)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vwd8i"]
@@ -247,88 +223,128 @@ humanSprite45 = Array[Texture2D]([ExtResource("117_wfck2"), ExtResource("118_khl
 humanSprite46 = Array[Texture2D]([ExtResource("119_8waar"), ExtResource("120_3cl76"), ExtResource("112_510xu")])
 humanSprite47 = Array[Texture2D]([ExtResource("121_eg5bb"), ExtResource("122_bnsw7"), ExtResource("112_510xu")])
 humanSprite48 = Array[Texture2D]([ExtResource("123_0smal"), ExtResource("124_r17hk"), ExtResource("112_510xu")])
-HumanSpawnPoints = [NodePath("Human"), NodePath("Human2"), NodePath("Human3"), NodePath("Human4"), NodePath("Human5"), NodePath("Human6"), NodePath("Human7")]
-stringPoints = [NodePath("CanvasLayer/Control/TextureRect3/String1"), NodePath("CanvasLayer/Control/TextureRect2/String2")]
-
-[node name="CanvasLayer" parent="." instance=ExtResource("24_0j4h4")]
-layer = 0
-
-[node name="String2" type="Sprite2D" parent="CanvasLayer/Control/TextureRect2" index="0"]
-position = Vector2(560, 519)
-scale = Vector2(0.5, 0.5)
-
-[node name="String1" type="Sprite2D" parent="CanvasLayer/Control/TextureRect3" index="0"]
-position = Vector2(980, 528)
-scale = Vector2(0.5, 0.5)
+HumanSpawnPoints = [NodePath("CanvasLayer/Control/Human"), NodePath("CanvasLayer/Control/Human2"), NodePath("CanvasLayer/Control/Human3"), NodePath("CanvasLayer/Control/Human4"), NodePath("CanvasLayer/Control/Human5"), NodePath("CanvasLayer/Control/Human6"), NodePath("CanvasLayer/Control/Human7")]
+stringPoints = [NodePath("CanvasLayer/Control/TextureRect3/TextureRect"), NodePath("CanvasLayer/Control/TextureRect2/String3")]
 
 [node name="Node2D" type="Node2D" parent="."]
-
-[node name="Slingshot" type="Sprite2D" parent="Node2D"]
-position = Vector2(612, 568)
-texture = ExtResource("4_btda1")
 
 [node name="Basket" type="Sprite2D" parent="Node2D"]
 position = Vector2(1055, 528)
 
-[node name="Human" parent="." instance=ExtResource("3_eglq2")]
-offset_left = 405.0
-offset_top = 31.0
-offset_right = 445.0
-offset_bottom = 71.0
-
-[node name="Human2" parent="." instance=ExtResource("3_eglq2")]
-offset_left = 276.0
-offset_top = 221.0
-offset_right = 316.0
-offset_bottom = 261.0
-
-[node name="Human3" parent="." instance=ExtResource("3_eglq2")]
-offset_left = 953.0
-offset_top = 167.0
-offset_right = 993.0
-offset_bottom = 207.0
-
-[node name="Human4" parent="." instance=ExtResource("3_eglq2")]
-offset_left = 94.0
-offset_top = 401.0
-offset_right = 134.0
-offset_bottom = 441.0
-
-[node name="Human5" parent="." instance=ExtResource("3_eglq2")]
-offset_left = 296.0
-offset_top = 73.0
-offset_right = 336.0
-offset_bottom = 113.0
-
-[node name="Human6" parent="." instance=ExtResource("3_eglq2")]
-
-[node name="Human7" parent="." instance=ExtResource("3_eglq2")]
-offset_left = 851.0
-offset_top = 348.0
-offset_right = 891.0
-offset_bottom = 388.0
-
 [node name="StringButton" parent="." instance=ExtResource("6_btda1")]
 visible = false
+
+[node name="CanvasLayer" parent="." instance=ExtResource("24_0j4h4")]
+layer = 0
+
+[node name="String3" type="TextureRect" parent="CanvasLayer/Control/TextureRect2" index="0"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -129.0
+offset_right = 4.0
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect3" index="0"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -133.0
+offset_right = -110.0
+offset_bottom = -93.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.5707964
+
+[node name="Human" parent="CanvasLayer/Control" index="6" instance=ExtResource("3_eglq2")]
+layout_mode = 1
+offset_left = 45.0
+offset_top = 465.0
+offset_right = 85.0
+offset_bottom = 505.0
+rotation = -0.23387411
+
+[node name="Human2" parent="CanvasLayer/Control" index="7" instance=ExtResource("3_eglq2")]
+layout_mode = 1
+offset_left = 723.75
+offset_top = 212.25
+offset_right = 763.75
+offset_bottom = 252.25
+rotation = -0.15707964
+
+[node name="Human3" parent="CanvasLayer/Control" index="8" instance=ExtResource("3_eglq2")]
+layout_mode = 0
+offset_left = 1513.5
+offset_top = 412.5
+offset_right = 1553.5
+offset_bottom = 452.5
+rotation = -0.31241393
+
+[node name="Human4" parent="CanvasLayer/Control" index="9" instance=ExtResource("3_eglq2")]
+layout_mode = 1
+offset_left = 542.25
+offset_top = 391.5
+offset_right = 582.25
+offset_bottom = 431.5
+rotation = 0.15533431
+
+[node name="Human5" parent="CanvasLayer/Control" index="10" instance=ExtResource("3_eglq2")]
+layout_mode = 1
+offset_left = 303.0
+offset_top = 191.25
+offset_right = 343.0
+offset_bottom = 231.25
+
+[node name="Human6" parent="CanvasLayer/Control" index="11" instance=ExtResource("3_eglq2")]
+layout_mode = 1
+offset_left = 1389.75
+offset_top = 132.0
+offset_right = 1429.75
+offset_bottom = 172.0
+rotation = 0.23387411
+
+[node name="BrownHuman" parent="CanvasLayer/Control/Human6" index="3"]
+offset_left = 536.0
+offset_top = 465.0
+offset_right = 576.0
+offset_bottom = 505.0
+
+[node name="Human7" parent="CanvasLayer/Control" index="12" instance=ExtResource("3_eglq2")]
+layout_mode = 1
+offset_left = 1020.75
+offset_top = 459.75
+offset_right = 1060.75
+offset_bottom = 499.75
+rotation = -0.15533431
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_vwd8i")
 }
 
-[connection signal="button_up" from="Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
-[connection signal="button_up" from="Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
-[connection signal="button_up" from="Human3/TextureButton" to="." method="_on_texture_button_button_up" binds= [2]]
-[connection signal="button_up" from="Human4/TextureButton" to="." method="_on_texture_button_button_up" binds= [3]]
-[connection signal="button_up" from="Human5/TextureButton" to="." method="_on_texture_button_button_up" binds= [4]]
-[connection signal="button_up" from="Human6/TextureButton" to="." method="_on_texture_button_button_up" binds= [5]]
-[connection signal="button_up" from="Human7/TextureButton" to="." method="_on_texture_button_button_up" binds= [6]]
+[connection signal="button_up" from="CanvasLayer/Control/Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
+[connection signal="button_up" from="CanvasLayer/Control/Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
+[connection signal="button_up" from="CanvasLayer/Control/Human3/TextureButton" to="." method="_on_texture_button_button_up" binds= [2]]
+[connection signal="button_up" from="CanvasLayer/Control/Human4/TextureButton" to="." method="_on_texture_button_button_up" binds= [3]]
+[connection signal="button_up" from="CanvasLayer/Control/Human5/TextureButton" to="." method="_on_texture_button_button_up" binds= [4]]
+[connection signal="button_up" from="CanvasLayer/Control/Human6/TextureButton" to="." method="_on_texture_button_button_up" binds= [5]]
+[connection signal="button_up" from="CanvasLayer/Control/Human7/TextureButton" to="." method="_on_texture_button_button_up" binds= [6]]
 
 [editable path="CanvasLayer"]
-[editable path="Human"]
-[editable path="Human2"]
-[editable path="Human3"]
-[editable path="Human4"]
-[editable path="Human5"]
-[editable path="Human6"]
-[editable path="Human7"]
+[editable path="CanvasLayer/Control/Human"]
+[editable path="CanvasLayer/Control/Human2"]
+[editable path="CanvasLayer/Control/Human3"]
+[editable path="CanvasLayer/Control/Human4"]
+[editable path="CanvasLayer/Control/Human5"]
+[editable path="CanvasLayer/Control/Human6"]
+[editable path="CanvasLayer/Control/Human7"]

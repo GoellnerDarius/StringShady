@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw202sdl1fdya"]
+[gd_scene load_steps=2 format=3 uid="uid://biweoj8idpyib"]
 
 [ext_resource type="Script" uid="uid://dw0cdqga1fbtd" path="res://Scripts/Highscore.gd" id="1_ryui2"]
 
@@ -11,8 +11,11 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 300.0
 grow_horizontal = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("1_ryui2")
 container = NodePath(".")
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2

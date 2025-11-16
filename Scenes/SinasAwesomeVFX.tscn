@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://x8ns1malg21w"]
+[gd_scene load_steps=12 format=3 uid="uid://datmofv66112p"]
 
 [ext_resource type="Texture2D" uid="uid://c22o3q76ikrd" path="res://VFX/Textures/VFX_Spark.png" id="1_f3ee8"]
 [ext_resource type="Texture2D" uid="uid://cf2xx1yboqqwq" path="res://VFX/Textures/VFX_Spikes.png" id="2_xvtah"]
 [ext_resource type="Texture2D" uid="uid://wqub7ukyuese" path="res://VFX/Textures/VFX_Cloud.png" id="3_y2bhr"]
-[ext_resource type="Texture2D" uid="uid://ebcws4fmjnhi" path="res://VFX/Textures/VFX_Wave.png" id="4_mnu5a"]
 
 [sub_resource type="Curve" id="Curve_f3ee8"]
 _data = [Vector2(0.005464483, 0), 0.0, 10.613237, 0, 0, Vector2(0.04735884, 0.33075374), 0.89195347, 0.89195347, 0, 0, Vector2(1, 0), -0.5619775, 0.0, 0, 0]
@@ -141,7 +140,6 @@ process_material = SubResource("ParticleProcessMaterial_2n41i")
 
 [node name="VFX_Water" type="GPUParticles2D" parent="."]
 amount = 5
-texture = ExtResource("4_mnu5a")
 lifetime = 3.0
 speed_scale = 0.91
 explosiveness = 0.5

@@ -4,6 +4,8 @@ extends Node
 
 var name_input: LineEdit
 var score_saved: bool = false
+@onready var font = load("res://Assets/Fonts/Comic Lemon.ttf")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +29,7 @@ func _ready() -> void:
 
 		var lable :Label
 		lable=Label.new()
+		lable.add_theme_font_override("font", font)
 		lable.text=str(display_number) + ". " + str(highscore)+": "+str(highscores[highscore])
 		lable.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		lable.size_flags_horizontal = Control.SIZE_EXPAND_FILL

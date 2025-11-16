@@ -1,6 +1,6 @@
 extends Node2D
 
-const HUMAN_SCALE = Vector2(0.4, 0.4)
+const HUMAN_SCALE = Vector2(0.7, 0.7)
 
 @export var stringSpriteUI : Array[Texture2D]
 @export var stringSprite : Array[Texture2D]
@@ -55,7 +55,7 @@ const HUMAN_SCALE = Vector2(0.4, 0.4)
 @export var humanSprite48 : Array[Texture2D]
 
 @export var HumanSpawnPoints: Array[Control]
-@export var stringPoints: Array[Sprite2D]
+@export var stringPoints: Array[TextureRect]
 
 @export var stringButton:Array[Control]
 @onready var animationPlayer:AnimationPlayer = $AnimationPlayer
