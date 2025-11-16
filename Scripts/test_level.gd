@@ -1,6 +1,6 @@
 extends Node2D
 
-const HUMAN_SCALE = Vector2(0.4, 0.4)
+const HUMAN_SCALE = Vector2(0.7, 0.7)
 
 @export var stringSpriteUI : Array[Texture2D]
 @export var stringSprite : Array[Texture2D]
@@ -55,7 +55,7 @@ const HUMAN_SCALE = Vector2(0.4, 0.4)
 @export var humanSprite48 : Array[Texture2D]
 
 @export var HumanSpawnPoints: Array[Control]
-@export var stringPoints: Array[Sprite2D]
+@export var stringPoints: Array[TextureRect]
 
 @export var stringButton:Array[Control]
 @onready var animationPlayer:AnimationPlayer = $AnimationPlayer
@@ -63,7 +63,7 @@ const HUMAN_SCALE = Vector2(0.4, 0.4)
 humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,humanSprite6,humanSprite7,humanSprite8
 ,humanSprite9,humanSprite10,humanSprite11,humanSprite12,humanSprite13,humanSprite14,humanSprite15,humanSprite16,humanSprite17,humanSprite18
 ,humanSprite19,humanSprite20,humanSprite21,humanSprite22,humanSprite23,humanSprite24,humanSprite25,humanSprite26,humanSprite27,humanSprite28
-,humanSprite29,humanSprite30,humanSprite31,humanSprite32,humanSprite33,humanSprite34,humanSprite34,humanSprite35,humanSprite36,humanSprite37
+,humanSprite29,humanSprite30,humanSprite31,humanSprite32,humanSprite33,humanSprite34,humanSprite35,humanSprite36,humanSprite37
 ,humanSprite38,humanSprite39,humanSprite40,humanSprite41,humanSprite42,humanSprite43,humanSprite44,humanSprite45,humanSprite46,humanSprite47
 ] 
 var currentUnderware:int
@@ -262,10 +262,14 @@ func _on_texture_button_button_up(extra_arg_0):
 	if (underwareHumanConst[extra_arg_0] == currentUnderware):
 		Globals.score+=10
 		print("correct")
+		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(5)
+		spawnpoint.emitting = true
 	else:
 		Globals.lifes-=1
 		ChangeTheWrongString(underwareHumanConst[extra_arg_0],currentUnderware)
 		print("wrong")
+		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(4)
+		spawnpoint.emitting = true
 		if Globals.lifes<=0:
 			get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
 			return
