@@ -369,20 +369,34 @@ func _on_texture_button_button_up(extra_arg_0):
 		# Wrong selection: place shot underwear on wrong human
 		addUnderware(currentUnderware, extra_arg_0)
 
-		# Put the shot underwear type back in queue (shuffle to back)
-		# Find another human who needs this type, or just add it back
 		var shot_type = currentUnderware
-		var wrong_human_needed_type = underwareHumanConst[extra_arg_0]
-
-		# Mark the wrong human as served (they got underwear, even if wrong)
+		var correct_type_for_human:int = underwareHumanConst[extra_arg_0] # This is the thong we need to REMOVE
+		# Mark the wrong human as served.
+		# This also removes 'correct_type_for_human' *if* it was in the map.
 		underwareHuman_map[extra_arg_0] = -1
 
-		# Re-add the shot type back to the map if any human originally needed it
-		# This puts it back in circulation
+		# Put the SHOT thong (shot_type) back into circulation
 		for i in range(underwareHuman_map.size()):
+			# Find the human who was waiting for the shot_type (their map value will be -1
+			# because it was in the 'current' slot)
 			if underwareHumanConst[i] == shot_type and underwareHuman_map[i] == -1 and i != extra_arg_0:
-				underwareHuman_map[i] = shot_type
+				underwareHuman_map[i] = shot_type # Put their requirement back on the map
 				break
+		
+		# --- BEGIN BUG FIX ---
+		# We must *also* remove 'correct_type_for_human' if it was in the 'next' slot.
+		# If so, it wasn't in the map, and the line `underwareHuman_map[extra_arg_0] = -1`
+		# did *not* remove it (it was already -1), leading to an extra thong.
+		print (correct_type_for_human)
+		if correct_type_for_human==nextUnderWare:
+			# Find a *new* thong from the map to be 'next'.
+			# This effectively "removes" correct_type_for_human from circulation.
+			var new_next = FindAnUnderWare() 
+			nextUnderWare =new_next
+			if new_next != -1:
+				# Mark the new 'next' thong's human as "in queue"
+				underwareHuman_map[underwareHuman_map.find(new_next)] = -1
+		# --- END BUG FIX ---
 
 	animationPlayer.play("String")
 	var endamount:int = 0
