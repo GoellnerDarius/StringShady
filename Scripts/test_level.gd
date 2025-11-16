@@ -78,10 +78,12 @@ humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,hu
 @export var good_patrick_sounds: Array[AudioStream]
 @export var bad_patrick_sounds: Array[AudioStream]
 @export var sizzle_sound: AudioStream
+@export var burn_sound: AudioStream
 
 var audio_player: AudioStreamPlayer
 var reaction_audio_player: AudioStreamPlayer
 var sizzle_audio_player: AudioStreamPlayer
+var burn_audio_player: AudioStreamPlayer
 var is_sizzling: bool = false
 
 var currentUnderware:int
@@ -116,8 +118,10 @@ func _ready():
 
 	# Create audio player for sizzle sound (looping)
 	sizzle_audio_player = AudioStreamPlayer.new()
+	burn_audio_player = AudioStreamPlayer.new()
 	#sizzle_audio_player.finished.connect(_on_sizzle_finished)
 	add_child(sizzle_audio_player)
+	add_child(burn_audio_player)
 
 	StartWave()
 
@@ -386,6 +390,9 @@ func _on_texture_button_button_up(extra_arg_0):
 		RemoveUnderWare()
 
 func _on_human_timeout(human_index: int):
+	if burn_sound != null:
+			burn_audio_player.stream = burn_sound
+			burn_audio_player.play()
 	Globals.lifes -= 1
 	if Globals.lifes==2:
 		life3.hide()
