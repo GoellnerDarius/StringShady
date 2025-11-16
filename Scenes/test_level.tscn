@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://qk47wg0douts" path="res://Assets/Strings/String_3.png" id="5_x6ft1"]
 [ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="6_8v7by"]
 [ext_resource type="Texture2D" uid="uid://dirbkunlntm4g" path="res://Assets/Strings/assets_sa_1744/06_tanga_5.png" id="6_0212m"]
-[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="6_btda1"]
+[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="6_btda1"]
 [ext_resource type="Texture2D" uid="uid://btw0e8wg8yym0" path="res://Assets/Strings/String_4.png" id="6_p51s7"]
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="7_8v7by"]
 [ext_resource type="Texture2D" uid="uid://l1sfbiyjn7mu" path="res://Assets/Strings/String_5.png" id="7_fbmvr"]
@@ -135,7 +135,7 @@
 [ext_resource type="AudioStream" uid="uid://c3k6q1o406l78" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot1.wav" id="128_fqwux"]
 [ext_resource type="AudioStream" uid="uid://bd41uva6qlcmq" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot2.wav" id="129_y6neq"]
 [ext_resource type="AudioStream" uid="uid://ch04tw1dx6a0q" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot3.wav" id="130_pmtsj"]
-[ext_resource type="PackedScene" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
+[ext_resource type="PackedScene" uid="uid://cus74pp10h4va" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
 [ext_resource type="AudioStream" uid="uid://cdpu14ni2mrr1" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice1_negative.wav" id="131_ah3kk"]
 [ext_resource type="AudioStream" uid="uid://btmqb8af0ia5x" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice1_positive.wav" id="131_fqwux"]
 [ext_resource type="AudioStream" uid="uid://dqv8xs8npfx20" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice2_negative.wav" id="132_6reng"]
@@ -334,7 +334,7 @@ grow_horizontal = 0
 grow_vertical = 0
 rotation = 1.5707964
 
-[node name="Human" parent="CanvasLayer/Control" index="7" instance=ExtResource("3_eglq2")]
+[node name="Human" parent="CanvasLayer/Control" index="6" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 45.0
 offset_top = 465.0
@@ -342,7 +342,7 @@ offset_right = 85.0
 offset_bottom = 505.0
 rotation = -0.23387411
 
-[node name="Human2" parent="CanvasLayer/Control" index="8" instance=ExtResource("3_eglq2")]
+[node name="Human2" parent="CanvasLayer/Control" index="7" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 723.75
 offset_top = 212.25
@@ -350,7 +350,7 @@ offset_right = 763.75
 offset_bottom = 252.25
 rotation = -0.15707964
 
-[node name="Human3" parent="CanvasLayer/Control" index="9" instance=ExtResource("3_eglq2")]
+[node name="Human3" parent="CanvasLayer/Control" index="8" instance=ExtResource("3_eglq2")]
 layout_mode = 0
 offset_left = 1513.5
 offset_top = 412.5
@@ -358,7 +358,7 @@ offset_right = 1553.5
 offset_bottom = 452.5
 rotation = -0.31241393
 
-[node name="Human4" parent="CanvasLayer/Control" index="10" instance=ExtResource("3_eglq2")]
+[node name="Human4" parent="CanvasLayer/Control" index="9" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 542.25
 offset_top = 391.5
@@ -366,14 +366,14 @@ offset_right = 582.25
 offset_bottom = 431.5
 rotation = 0.15533431
 
-[node name="Human5" parent="CanvasLayer/Control" index="11" instance=ExtResource("3_eglq2")]
+[node name="Human5" parent="CanvasLayer/Control" index="10" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 303.0
 offset_top = 191.25
 offset_right = 343.0
 offset_bottom = 231.25
 
-[node name="Human6" parent="CanvasLayer/Control" index="12" instance=ExtResource("3_eglq2")]
+[node name="Human6" parent="CanvasLayer/Control" index="11" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 1389.75
 offset_top = 132.0
@@ -387,7 +387,7 @@ offset_top = 465.0
 offset_right = 576.0
 offset_bottom = 505.0
 
-[node name="Human7" parent="CanvasLayer/Control" index="13" instance=ExtResource("3_eglq2")]
+[node name="Human7" parent="CanvasLayer/Control" index="12" instance=ExtResource("3_eglq2")]
 layout_mode = 1
 offset_left = 1020.75
 offset_top = 459.75
