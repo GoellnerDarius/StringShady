@@ -77,9 +77,12 @@ humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,hu
 @export var bad_male_sounds: Array[AudioStream]
 @export var good_patrick_sounds: Array[AudioStream]
 @export var bad_patrick_sounds: Array[AudioStream]
+@export var sizzle_sound: AudioStream
 
 var audio_player: AudioStreamPlayer
 var reaction_audio_player: AudioStreamPlayer
+var sizzle_audio_player: AudioStreamPlayer
+var is_sizzling: bool = false
 
 var currentUnderware:int
 var nextUnderWare:int
@@ -111,9 +114,16 @@ func _ready():
 	reaction_audio_player = AudioStreamPlayer.new()
 	add_child(reaction_audio_player)
 
+	# Create audio player for sizzle sound (looping)
+	sizzle_audio_player = AudioStreamPlayer.new()
+	#sizzle_audio_player.finished.connect(_on_sizzle_finished)
+	add_child(sizzle_audio_player)
+
 	StartWave()
 
 func _process(delta: float) -> void:
+	var anyone_burning = false
+
 	# Update brown/burnt overlays based on timer progress
 	for i in range(human_timers.size()):
 		if human_timers[i].is_stopped():
@@ -134,6 +144,19 @@ func _process(delta: float) -> void:
 			human_brown_overlays[i].modulate.a = 1.0
 			var burnt_alpha = (progress - 0.5) * 2.0  # 0.0 to 1.0 during second half
 			human_burnt_overlays[i].modulate.a = burnt_alpha
+			anyone_burning = true
+
+	# Manage sizzle sound
+	if anyone_burning and not is_sizzling:
+		# Start sizzle sound
+		if sizzle_sound != null:
+			sizzle_audio_player.stream = sizzle_sound
+			sizzle_audio_player.play()
+			is_sizzling = true
+	elif not anyone_burning and is_sizzling:
+		# Stop sizzle sound
+		sizzle_audio_player.stop()
+		is_sizzling = false
 
 func StartWave():
 	var humans_to_spawn = starting_humans + (current_wave - 1)
