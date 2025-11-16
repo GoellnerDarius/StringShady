@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bgplbebg3kt2g"]
+[gd_scene load_steps=3 format=3 uid="uid://bgplbebg3kt2g"]
+
+[ext_resource type="PackedScene" path="res://Scenes/vfx_spark_booty_falsch.tscn" id="1_sn1q7"]
+[ext_resource type="PackedScene" path="res://Scenes/vfx_spark_booty_richtig.tscn" id="2_im30h"]
 
 [node name="BurntHuman" type="Control"]
 layout_mode = 3
@@ -25,3 +28,9 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="VFX_SparkBootyFalsch" parent="." instance=ExtResource("1_sn1q7")]
+position = Vector2(144, 288)
+
+[node name="VFX_SparkBootyRichtig" parent="." instance=ExtResource("2_im30h")]
+position = Vector2(144, 288)

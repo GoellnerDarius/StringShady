@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=137 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://bgplbebg3kt2g" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
@@ -132,6 +132,7 @@
 [ext_resource type="Texture2D" uid="uid://dtljgvh4d4h7w" path="res://Assets/Persons/Patrick/Patrick_String_6_State_2.png" id="122_bnsw7"]
 [ext_resource type="Texture2D" uid="uid://dynukxyxcijed" path="res://Assets/Persons/Patrick/Patrick_String_7_State_1.png" id="123_0smal"]
 [ext_resource type="Texture2D" uid="uid://dsncbquhbdc6" path="res://Assets/Persons/Patrick/Patrick_String_7_State_2.png" id="124_r17hk"]
+[ext_resource type="PackedScene" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
 
 [sub_resource type="Animation" id="Animation_wl6rx"]
 length = 0.001
@@ -146,6 +147,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("4_btda1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/TextureRect2/VFX_StringShot:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_0jj1n"]
@@ -162,6 +175,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("107_j3qi3"), ExtResource("4_btda1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/TextureRect2/VFX_StringShot:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vwd8i"]
@@ -250,6 +275,9 @@ offset_right = 4.0
 offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="VFX_StringShot" parent="CanvasLayer/Control/TextureRect2" index="1" instance=ExtResource("130_wp8lo")]
+position = Vector2(698.75, 665)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/TextureRect3" index="0"]
 layout_mode = 1
