@@ -54,6 +54,7 @@ const HUMAN_SCALE = Vector2(0.7, 0.7)
 @export var humanSprite47 : Array[Texture2D]
 @export var humanSprite48 : Array[Texture2D]
 
+
 @export var HumanSpawnPoints: Array[Control]
 @export var stringPoints: Array[TextureRect]
 
@@ -344,6 +345,8 @@ func _on_texture_button_button_up(extra_arg_0):
 		Globals.score+=10
 		print("correct")
 		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(5)
+		var player:AnimationPlayer = HumanSpawnPoints[extra_arg_0].get_child(6)
+		player.play("Happy")
 		spawnpoint.emitting = true
 		addUnderware(currentUnderware, extra_arg_0)
 		play_reaction_sound(extra_arg_0, true)
@@ -355,6 +358,8 @@ func _on_texture_button_button_up(extra_arg_0):
 			life2.hide()
 		print("wrong")
 		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(4)
+		var player:AnimationPlayer = HumanSpawnPoints[extra_arg_0].get_child(6)
+		player.play("Angry")
 		spawnpoint.emitting = true
 		play_reaction_sound(extra_arg_0, false)
 		if Globals.lifes<=0:
