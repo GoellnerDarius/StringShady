@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmtmmcdbshsrl"]
+
+[ext_resource type="Texture2D" uid="uid://yfib1p1sadqd" path="res://Assets/ProtoypeFolder/man-avatar-clipart-illustration-free-png-2353026389.png" id="1_nr671"]
+[ext_resource type="Texture2D" uid="uid://b2aj2u6w2pseo" path="res://Assets/ProtoypeFolder/111675360QM9_OF_F-4163753176.jpg" id="2_elqhd"]
+[ext_resource type="PackedScene" uid="uid://bx05c60f5ojlk" path="res://Scenes/Timer.tscn" id="3_nr671"]
+
+[node name="GoellnerTestScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(501, 350)
+scale = Vector2(0.21662897, 0.21662898)
+texture = ExtResource("1_nr671")
+
+[node name="111675360qm9OfF4163753176" type="Sprite2D" parent="."]
+position = Vector2(507, 62.00009)
+scale = Vector2(0.053749945, 0.053749945)
+texture = ExtResource("2_elqhd")
+
+[node name="ProgressBar" parent="." instance=ExtResource("3_nr671")]
