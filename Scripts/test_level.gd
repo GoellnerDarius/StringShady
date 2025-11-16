@@ -262,10 +262,14 @@ func _on_texture_button_button_up(extra_arg_0):
 	if (underwareHumanConst[extra_arg_0] == currentUnderware):
 		Globals.score+=10
 		print("correct")
+		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(5)
+		spawnpoint.emitting = true
 	else:
 		Globals.lifes-=1
 		ChangeTheWrongString(underwareHumanConst[extra_arg_0],currentUnderware)
 		print("wrong")
+		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(4)
+		spawnpoint.emitting = true
 		if Globals.lifes<=0:
 			get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
 			return
