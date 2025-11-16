@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=165 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://bgplbebg3kt2g" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
@@ -160,6 +160,7 @@
 [ext_resource type="AudioStream" uid="uid://b0wwtoxwc1vmu" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice3_positive.wav" id="141_baate"]
 [ext_resource type="AudioStream" uid="uid://ct7etfl3jvpwg" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice4_positive.wav" id="142_jpunc"]
 [ext_resource type="AudioStream" uid="uid://dsbn54l0hftif" path="res://Assets/StringShady_SFX/light_sizzle_LOOP.wav" id="153_y6neq"]
+[ext_resource type="AudioStream" uid="uid://d1jfnqvppfsut" path="res://Assets/StringShady_SFX/heavy_sizzle.wav" id="154_pmtsj"]
 
 [sub_resource type="Animation" id="Animation_wl6rx"]
 length = 0.001
@@ -288,6 +289,7 @@ bad_male_sounds = Array[AudioStream]([ExtResource("131_ah3kk"), ExtResource("132
 good_patrick_sounds = Array[AudioStream]([ExtResource("135_7ahar"), ExtResource("136_xk56y"), ExtResource("137_jyrua")])
 bad_patrick_sounds = Array[AudioStream]([ExtResource("138_ih0py"), ExtResource("139_el3e8"), ExtResource("140_s87f6")])
 sizzle_sound = ExtResource("153_y6neq")
+burn_sound = ExtResource("154_pmtsj")
 
 [node name="Node2D" type="Node2D" parent="."]
 
