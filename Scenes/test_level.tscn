@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=141 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://bgplbebg3kt2g" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
@@ -136,6 +136,7 @@
 [ext_resource type="AudioStream" uid="uid://rqljm6x1663u" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch2.wav" id="129_khldq"]
 [ext_resource type="AudioStream" uid="uid://bsfwicifxha4c" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch3.wav" id="130_8waar"]
 [ext_resource type="PackedScene" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
+[ext_resource type="AudioStream" uid="uid://crvq2a6r6dwgu" path="res://Assets/StringShady_SFX/Beach_Ambience_LOOP.wav" id="137_khldq"]
 
 [sub_resource type="Animation" id="Animation_wl6rx"]
 length = 0.001
@@ -366,6 +367,14 @@ rotation = -0.15533431
 libraries = {
 &"": SubResource("AnimationLibrary_vwd8i")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("137_khldq")
+volume_db = 18.0
+autoplay = true
+max_distance = 21060.0
+attenuation = 0.011048547
+max_polyphony = 2
 
 [connection signal="button_up" from="CanvasLayer/Control/Human/TextureButton" to="." method="_on_texture_button_button_up" binds= [0]]
 [connection signal="button_up" from="CanvasLayer/Control/Human2/TextureButton" to="." method="_on_texture_button_button_up" binds= [1]]
