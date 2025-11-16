@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://c3jdseujn2v7r"]
+[gd_scene load_steps=163 format=3 uid="uid://c3jdseujn2v7r"]
 
 [ext_resource type="Script" uid="uid://b13rrt1oa5x5j" path="res://Scripts/test_level.gd" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://bgplbebg3kt2g" path="res://Scenes/HumanButton.tscn" id="3_eglq2"]
@@ -136,7 +136,29 @@
 [ext_resource type="AudioStream" uid="uid://rqljm6x1663u" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch2.wav" id="129_khldq"]
 [ext_resource type="AudioStream" uid="uid://bsfwicifxha4c" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch3.wav" id="130_8waar"]
 [ext_resource type="PackedScene" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
+[ext_resource type="AudioStream" uid="uid://cdpu14ni2mrr1" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice1_negative.wav" id="131_ah3kk"]
+[ext_resource type="AudioStream" uid="uid://btmqb8af0ia5x" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice1_positive.wav" id="131_fqwux"]
+[ext_resource type="AudioStream" uid="uid://dqv8xs8npfx20" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice2_negative.wav" id="132_6reng"]
+[ext_resource type="AudioStream" uid="uid://dtys71y1d3dyk" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice2_positive.wav" id="132_y6neq"]
+[ext_resource type="AudioStream" uid="uid://d1jdmewaosyer" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice3_negative.wav" id="133_g1dkj"]
+[ext_resource type="AudioStream" uid="uid://baaf7plxi7t23" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice3_positive.wav" id="133_pmtsj"]
+[ext_resource type="AudioStream" uid="uid://cc6vg5dgcyqn5" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice4_positive.wav" id="134_lp750"]
+[ext_resource type="AudioStream" uid="uid://b3qps3db43es8" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice4_negative.wav" id="134_u2c3s"]
+[ext_resource type="AudioStream" uid="uid://62gqrbjlatud" path="res://Assets/StringShady_SFX/Patrick_Variations/Patrick1_positive.wav" id="135_7ahar"]
+[ext_resource type="AudioStream" uid="uid://x7vf7333gqn" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice1_negative.wav" id="135_32s1b"]
+[ext_resource type="AudioStream" uid="uid://cr8vuwpqx53g2" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice2_negative.wav" id="136_oo4k1"]
+[ext_resource type="AudioStream" uid="uid://dbfll83tfus8k" path="res://Assets/StringShady_SFX/Patrick_Variations/Patrick2_positive.wav" id="136_xk56y"]
+[ext_resource type="AudioStream" uid="uid://x44omuxivp1t" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice3_negative.wav" id="137_2lw5y"]
+[ext_resource type="AudioStream" uid="uid://cfi8o1ypjlg0s" path="res://Assets/StringShady_SFX/Patrick_Variations/Patrick3_positive.wav" id="137_jyrua"]
 [ext_resource type="AudioStream" uid="uid://crvq2a6r6dwgu" path="res://Assets/StringShady_SFX/Beach_Ambience_LOOP.wav" id="137_khldq"]
+[ext_resource type="AudioStream" uid="uid://bffgujusmgvy4" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice4_negative.wav" id="138_i5ymq"]
+[ext_resource type="AudioStream" uid="uid://srgeikt3ua3x" path="res://Assets/StringShady_SFX/Patrick_Variations/Patrick1_negative.wav" id="138_ih0py"]
+[ext_resource type="AudioStream" uid="uid://d3sl64dl736dh" path="res://Assets/StringShady_SFX/Patrick_Variations/Patrick2_negative.wav" id="139_el3e8"]
+[ext_resource type="AudioStream" uid="uid://b0sm1pleoe2f3" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice1_positive.wav" id="139_lbepw"]
+[ext_resource type="AudioStream" uid="uid://bhs1h4u4ag61j" path="res://Assets/StringShady_SFX/Patrick_Variations/Patrick3_negative.wav" id="140_s87f6"]
+[ext_resource type="AudioStream" uid="uid://bqbc7gf0dh5l6" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice2_positive.wav" id="140_u18qg"]
+[ext_resource type="AudioStream" uid="uid://b0wwtoxwc1vmu" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice3_positive.wav" id="141_baate"]
+[ext_resource type="AudioStream" uid="uid://ct7etfl3jvpwg" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice4_positive.wav" id="142_jpunc"]
 
 [sub_resource type="Animation" id="Animation_wl6rx"]
 length = 0.001
@@ -258,6 +280,12 @@ life1 = NodePath("CanvasLayer/Control/Lifes/Life1")
 life2 = NodePath("CanvasLayer/Control/Lifes/Life2")
 life3 = NodePath("CanvasLayer/Control/Lifes/Life3")
 slingshot_sounds = Array[AudioStream]([ExtResource("128_wfck2"), ExtResource("129_khldq"), ExtResource("130_8waar")])
+good_female_sounds = Array[AudioStream]([ExtResource("131_fqwux"), ExtResource("132_y6neq"), ExtResource("133_pmtsj"), ExtResource("134_lp750")])
+bad_female_sounds = Array[AudioStream]([ExtResource("135_32s1b"), ExtResource("136_oo4k1"), ExtResource("137_2lw5y"), ExtResource("138_i5ymq")])
+good_male_sounds = Array[AudioStream]([ExtResource("139_lbepw"), ExtResource("140_u18qg"), ExtResource("141_baate"), ExtResource("142_jpunc")])
+bad_male_sounds = Array[AudioStream]([ExtResource("131_ah3kk"), ExtResource("132_6reng"), ExtResource("133_g1dkj"), ExtResource("134_u2c3s")])
+good_patrick_sounds = Array[AudioStream]([ExtResource("135_7ahar"), ExtResource("136_xk56y"), ExtResource("137_jyrua")])
+bad_patrick_sounds = Array[AudioStream]([ExtResource("138_ih0py"), ExtResource("139_el3e8"), ExtResource("140_s87f6")])
 
 [node name="Node2D" type="Node2D" parent="."]
 

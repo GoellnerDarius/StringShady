@@ -71,13 +71,22 @@ humanSprite0,humanSprite1,humanSprite2,humanSprite3,humanSprite4,humanSprite5,hu
 @export var life3: TextureRect
 
 @export var slingshot_sounds: Array[AudioStream]
+@export var good_female_sounds: Array[AudioStream]
+@export var bad_female_sounds: Array[AudioStream]
+@export var good_male_sounds: Array[AudioStream]
+@export var bad_male_sounds: Array[AudioStream]
+@export var good_patrick_sounds: Array[AudioStream]
+@export var bad_patrick_sounds: Array[AudioStream]
+
 var audio_player: AudioStreamPlayer
+var reaction_audio_player: AudioStreamPlayer
 
 var currentUnderware:int
 var nextUnderWare:int
 var underwareHuman_map : Array[int]
 var underwareHumanConst :Array[int]
 var ManOrWoman :Array[bool]
+var humanSpriteIndices: Array[int]
 
 var current_wave: int = 1
 var starting_humans: int = 3
@@ -97,6 +106,10 @@ func _ready():
 	# Create audio player for slingshot sounds
 	audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
+
+	# Create audio player for reaction sounds (good/bad)
+	reaction_audio_player = AudioStreamPlayer.new()
+	add_child(reaction_audio_player)
 
 	StartWave()
 
@@ -137,6 +150,7 @@ func Spawnhumans(Amount):
 		HumanSpawnPoints[n].scale = HUMAN_SCALE
 		underwareHuman_map.append(randomnumber % 7)
 		underwareHumanConst.append(randomnumber % 7)
+		humanSpriteIndices.append(randomnumber)
 		if randomnumber > 20:
 			ManOrWoman.append(true)
 		else:
@@ -219,6 +233,7 @@ func ClearRound():
 	underwareHuman_map = []
 	underwareHumanConst = []
 	ManOrWoman = []
+	humanSpriteIndices = []
 	stringPoints[0].texture = null
 	stringPoints[1].texture = null
 
@@ -269,6 +284,27 @@ func ChangeTheWrongString(WrongSpace,underWareUsed):
 	#underwareHuman_map[underwareHuman_map.find(underWareUsed)] = WrongSpace
 	print(underwareHuman_map)
 
+func play_reaction_sound(human_index: int, is_correct: bool):
+	var sprite_index = humanSpriteIndices[human_index]
+	var sound_array: Array[AudioStream]
+
+	# Determine which sound array to use based on human type
+	if sprite_index >= 42:
+		# Patrick (humanSprite 42 onwards)
+		sound_array = good_patrick_sounds if is_correct else bad_patrick_sounds
+	elif sprite_index > 20:
+		# Male (humanSprite 21-41)
+		sound_array = good_male_sounds if is_correct else bad_male_sounds
+	else:
+		# Female (humanSprite 0-20)
+		sound_array = good_female_sounds if is_correct else bad_female_sounds
+
+	# Play random sound from the appropriate array
+	if sound_array.size() > 0:
+		var random_sound = sound_array[randi() % sound_array.size()]
+		reaction_audio_player.stream = random_sound
+		reaction_audio_player.play()
+
 func _on_texture_button_button_up(extra_arg_0):
 	# Play random slingshot sound
 	if slingshot_sounds.size() > 0:
@@ -282,6 +318,7 @@ func _on_texture_button_button_up(extra_arg_0):
 		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(5)
 		spawnpoint.emitting = true
 		addUnderware(currentUnderware, extra_arg_0)
+		play_reaction_sound(extra_arg_0, true)
 	else:
 		Globals.lifes-=1
 		if Globals.lifes==2:
@@ -291,6 +328,7 @@ func _on_texture_button_button_up(extra_arg_0):
 		print("wrong")
 		var spawnpoint:GPUParticles2D =HumanSpawnPoints[extra_arg_0].get_child(4)
 		spawnpoint.emitting = true
+		play_reaction_sound(extra_arg_0, false)
 		if Globals.lifes<=0:
 			get_tree().change_scene_to_file("res://Scenes/EndScene.tscn")
 			return
