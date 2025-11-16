@@ -132,9 +132,9 @@
 [ext_resource type="Texture2D" uid="uid://dtljgvh4d4h7w" path="res://Assets/Persons/Patrick/Patrick_String_6_State_2.png" id="122_bnsw7"]
 [ext_resource type="Texture2D" uid="uid://dynukxyxcijed" path="res://Assets/Persons/Patrick/Patrick_String_7_State_1.png" id="123_0smal"]
 [ext_resource type="Texture2D" uid="uid://dsncbquhbdc6" path="res://Assets/Persons/Patrick/Patrick_String_7_State_2.png" id="124_r17hk"]
-[ext_resource type="AudioStream" uid="uid://bslgncdpqkvk1" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch1.wav" id="128_wfck2"]
-[ext_resource type="AudioStream" uid="uid://rqljm6x1663u" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch2.wav" id="129_khldq"]
-[ext_resource type="AudioStream" uid="uid://bsfwicifxha4c" path="res://Assets/StringShady_SFX/StringStretchHover_Variations/StringStretch3.wav" id="130_8waar"]
+[ext_resource type="AudioStream" uid="uid://c3k6q1o406l78" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot1.wav" id="128_fqwux"]
+[ext_resource type="AudioStream" uid="uid://bd41uva6qlcmq" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot2.wav" id="129_y6neq"]
+[ext_resource type="AudioStream" uid="uid://ch04tw1dx6a0q" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot3.wav" id="130_pmtsj"]
 [ext_resource type="PackedScene" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
 [ext_resource type="AudioStream" uid="uid://cdpu14ni2mrr1" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice1_negative.wav" id="131_ah3kk"]
 [ext_resource type="AudioStream" uid="uid://btmqb8af0ia5x" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice1_positive.wav" id="131_fqwux"]
@@ -279,7 +279,7 @@ stringPoints = [NodePath("CanvasLayer/Control/TextureRect3/TextureRect"), NodePa
 life1 = NodePath("CanvasLayer/Control/Lifes/Life1")
 life2 = NodePath("CanvasLayer/Control/Lifes/Life2")
 life3 = NodePath("CanvasLayer/Control/Lifes/Life3")
-slingshot_sounds = Array[AudioStream]([ExtResource("128_wfck2"), ExtResource("129_khldq"), ExtResource("130_8waar")])
+slingshot_sounds = Array[AudioStream]([ExtResource("128_fqwux"), ExtResource("129_y6neq"), ExtResource("130_pmtsj")])
 good_female_sounds = Array[AudioStream]([ExtResource("131_fqwux"), ExtResource("132_y6neq"), ExtResource("133_pmtsj"), ExtResource("134_lp750")])
 bad_female_sounds = Array[AudioStream]([ExtResource("135_32s1b"), ExtResource("136_oo4k1"), ExtResource("137_2lw5y"), ExtResource("138_i5ymq")])
 good_male_sounds = Array[AudioStream]([ExtResource("139_lbepw"), ExtResource("140_u18qg"), ExtResource("141_baate"), ExtResource("142_jpunc")])

@@ -299,9 +299,10 @@ func play_reaction_sound(human_index: int, is_correct: bool):
 		# Female (humanSprite 0-20)
 		sound_array = good_female_sounds if is_correct else bad_female_sounds
 
-	# Play random sound from the appropriate array
+	# Play random sound from the appropriate array after a small delay
 	if sound_array.size() > 0:
 		var random_sound = sound_array[randi() % sound_array.size()]
+		await get_tree().create_timer(0.2).timeout
 		reaction_audio_player.stream = random_sound
 		reaction_audio_player.play()
 
