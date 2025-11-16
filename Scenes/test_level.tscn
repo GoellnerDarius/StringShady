@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://qk47wg0douts" path="res://Assets/Strings/String_3.png" id="5_x6ft1"]
 [ext_resource type="Texture2D" uid="uid://33oh0pkl7fx5" path="res://Assets/Persons/Mensch_1_String_1_ohne_state_3.png" id="6_8v7by"]
 [ext_resource type="Texture2D" uid="uid://dirbkunlntm4g" path="res://Assets/Strings/assets_sa_1744/06_tanga_5.png" id="6_0212m"]
-[ext_resource type="PackedScene" uid="uid://45ij6sui2luv" path="res://Scenes/StringButton.tscn" id="6_btda1"]
+[ext_resource type="PackedScene" path="res://Scenes/StringButton.tscn" id="6_btda1"]
 [ext_resource type="Texture2D" uid="uid://btw0e8wg8yym0" path="res://Assets/Strings/String_4.png" id="6_p51s7"]
 [ext_resource type="Texture2D" uid="uid://c5mtxf15wml35" path="res://Assets/Persons/Mensch_1_String_2_state_1.png" id="7_8v7by"]
 [ext_resource type="Texture2D" uid="uid://l1sfbiyjn7mu" path="res://Assets/Strings/String_5.png" id="7_fbmvr"]
@@ -135,7 +135,7 @@
 [ext_resource type="AudioStream" uid="uid://c3k6q1o406l78" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot1.wav" id="128_fqwux"]
 [ext_resource type="AudioStream" uid="uid://bd41uva6qlcmq" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot2.wav" id="129_y6neq"]
 [ext_resource type="AudioStream" uid="uid://ch04tw1dx6a0q" path="res://Assets/StringShady_SFX/SHOOT_Variations/Shoot3.wav" id="130_pmtsj"]
-[ext_resource type="PackedScene" uid="uid://cus74pp10h4va" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
+[ext_resource type="PackedScene" path="res://Scenes/vfx_string_shot.tscn" id="130_wp8lo"]
 [ext_resource type="AudioStream" uid="uid://cdpu14ni2mrr1" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice1_negative.wav" id="131_ah3kk"]
 [ext_resource type="AudioStream" uid="uid://btmqb8af0ia5x" path="res://Assets/StringShady_SFX/FemaleVoice_Variations/FemaleVoice1_positive.wav" id="131_fqwux"]
 [ext_resource type="AudioStream" uid="uid://dqv8xs8npfx20" path="res://Assets/StringShady_SFX/MaleVoice_Variations/MaleVoice2_negative.wav" id="132_6reng"]
@@ -394,6 +394,9 @@ offset_top = 459.75
 offset_right = 1060.75
 offset_bottom = 499.75
 rotation = -0.15533431
+
+[node name="Wave" parent="CanvasLayer/Control" index="13"]
+mouse_filter = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
